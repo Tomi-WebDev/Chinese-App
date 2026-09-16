@@ -1,0 +1,35 @@
+.verb_practice {
+
+    padding: 10px 50px;
+    background: linear-gradient(to right, #fff, #2c9b92, #fff);
+    animation: gradientAnimation 10s linear infinite;
+    background-size: 200% auto;
+    overflow: hidden;
+}
+
+.verb_multiple_choice label:first-child {
+    display: flex; 
+    gap: 5px; 
+}
+
+.verb_multiple_choice input {
+
+    width: 20px;
+    min-width: 0;
+    /* margin: 0; */
+    margin: 0 5px 0 10px;
+}
+
+@keyframes gradientAnimation {
+    0% {
+      background-position: 0% 0%;
+    }
+  
+    50% {
+      background-position: 100% 0%;
+    }
+  
+    100% {
+      background-position: 0% 0%;
+    }
+  }

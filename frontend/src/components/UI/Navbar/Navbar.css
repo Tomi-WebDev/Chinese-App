@@ -1,0 +1,102 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 390px;
+    height: 130px;
+    background-color: #fff;
+    padding: 26px 18px 12px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    z-index: 10;
+}
+
+.search_user_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.search_bar {
+    display: flex;
+    width: 292px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    background: var(--White, #FFF);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    padding: 10px 12px;
+    margin-top: 5px;
+    margin-bottom: 12px;
+}
+
+.search_bar input {
+    width: 220px;
+    border: none;
+    margin-right: 12px;
+    margin-top: 4px;
+    padding-left: 15px;
+}
+
+.search_bar input::placeholder {
+    color: var(--Input-Grey-Text, #CBC9D4);
+    font-family: 'Proxima Nova', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.search_bar img {
+    width: 20px;
+    height: 20px;
+}
+
+.user {
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+    border-radius: 50px;
+    background: url("../../../assets/images/mountain.jpg"), lightgray 50% / cover no-repeat;
+    background-position: 100px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.mode_boxes_container {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+    align-items: center;
+    max-width: 350px;
+    overflow-x: scroll;
+    padding-bottom: 5px;
+}
+
+.mode_boxes_container::-webkit-scrollbar {
+    height: 5px;
+}
+
+.mode_boxes_container::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 5px;
+} 
+
+
+
+.mode_box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 80px;
+    padding: 4px 5px;
+    /* height: 26px; */
+    flex-shrink: 0;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 5px;
+    background: var(--Blue-Main, #0AF);
+    color: var(--White, #FFF);
+    font-family: 'Proxima Nova', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}

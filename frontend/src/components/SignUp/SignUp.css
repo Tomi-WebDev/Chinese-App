@@ -1,0 +1,181 @@
+.login_screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 60px 32px 40px 32px;
+}
+
+.login_screen h1 {
+    font-family: 'Avenir', sans-serif;
+    margin-bottom: 37px;
+}
+
+.inputs_column {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    margin-bottom: 48px;
+}
+
+/* .input_box p {
+    font-family: 'Proxima Nova', sans-serif;
+} */
+
+.input_box label {
+    margin-bottom: 4px;
+    color: var(--Black, #222);
+    font-family: 'Proxima Nova', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.input_box input {
+    display: flex;
+    width: 326px;
+    height: 43px;
+    padding: 12px 16px;
+    align-items: center;
+    gap: 12px;
+    border-radius: 8px;
+    background: var(--Input-Grey, #F1F1F3);
+    border: none;
+}
+
+.input_box input::placeholder {
+    color: var(--Input-Grey-Text, #CBC9D4);
+    font-family: 'Proxima Nova', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal; 
+}
+
+input[type=submit] {
+    display: flex;
+    width: 326px;
+    height: 43px;
+    padding: 12px 97px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 8px;
+    background: #00AAFF;
+    color: var(--White, #FFF);
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    border: none;
+    margin-bottom: 16px;
+    font-family: 'Avenir', sans-serif;
+}
+
+.input_box .login_option {
+    margin-top: 4px;
+    text-align: left;
+}
+
+.login_option {
+    color: var(--Black, #222);
+    font-family: 'Proxima Nova', sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-align: center;
+}
+
+.login_link {
+    color: var(--Black, #00AAFF);
+    font-family: 'Proxima Nova', sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    /* text-decoration-line: underline; */
+}
+
+.login_divider {
+    display: flex;
+    width: 326px;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.login_divider .line {
+    width: 133px;
+    height: 1px;
+    background: #C3C8D0;
+}
+
+.or {
+    color: #000;
+    font-family: 'Proxima Nova', sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.other_options {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.login_option_button {
+    display: flex;
+    width: 326px;
+    padding: 12px 15px;
+    align-items: center;
+    gap: 15px;
+    border: none;
+}
+
+.login_google {
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.17), 0px 0px 3px 0px rgba(0, 0, 0, 0.08);
+}
+
+.login_google p {
+    color: rgba(0, 0, 0, 0.54);
+    font-family: 'Avenir', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.login_apple {
+    border-radius: 10px;
+    background: #000;
+}
+
+.login_apple p {
+    color: var(--White, #FFF);
+    font-family: 'Avenir', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.guest_link {
+    color: #00AAFF;
+    font-family: 'Proxima Nova', sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    /* text-decoration-line: underline; */
+}
+
+

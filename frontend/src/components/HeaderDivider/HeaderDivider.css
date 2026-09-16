@@ -1,0 +1,13 @@
+.header_div {
+    width: 100%; /* Full width */
+    text-align: center; /* Center the title text */
+    margin: 20px 0; /* Add margin to create space between input lists */
+    font-family: 'Proxima Nova', sans-serif; /* Match the font-family */
+    font-size: 24px; /* Font size for the title */
+    font-weight: 600; /* Make the title bold */
+    color: #000; /* Text color */
+    background-color: #f9f9f9; /* Light background color */
+    padding: 10px 0; /* Padding for space around the title */
+    border-radius: 8px; /* Slight border radius for rounded corners */
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+}

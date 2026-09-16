@@ -1,0 +1,167 @@
+.home_page {
+  min-height: 100vh;
+  padding: 72px 24px 96px;
+  color: #17252e;
+  background:
+    radial-gradient(circle at 88% 8%, rgba(255, 197, 102, 0.35), transparent 28%),
+    linear-gradient(135deg, #f7f4ee 0%, #e9f3f1 100%);
+}
+
+.home_intro,
+.exercise_grid {
+  width: min(100%, 1080px);
+  margin: 0 auto;
+}
+
+.home_intro {
+  padding: 28px 0 48px;
+}
+
+.home_kicker {
+  margin-bottom: 16px;
+  color: #e86f51;
+  font-family: Georgia, serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.home_intro h1 {
+  max-width: 700px;
+  margin-bottom: 16px;
+  font-family: Georgia, serif;
+  font-size: clamp(42px, 7vw, 78px);
+  font-weight: 400;
+  line-height: 0.98;
+}
+
+.home_subtitle {
+  max-width: 490px;
+  color: #52636b;
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.exercise_grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.exercise_card {
+  position: relative;
+  display: flex;
+  min-height: 220px;
+  flex-direction: column;
+  padding: 24px;
+  overflow: hidden;
+  color: #17252e;
+  text-decoration: none;
+  border: 1px solid rgba(23, 37, 46, 0.12);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 14px 30px rgba(43, 65, 70, 0.08);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.exercise_card::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 7px;
+  content: "";
+  background: var(--card-accent);
+}
+
+.exercise_card:hover,
+.exercise_card:focus-visible {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 35px rgba(43, 65, 70, 0.16);
+}
+
+.exercise_card:focus-visible {
+  outline: 3px solid rgba(23, 37, 46, 0.35);
+  outline-offset: 3px;
+}
+
+.exercise_card_coral { --card-accent: #e86f51; }
+.exercise_card_blue { --card-accent: #3298b5; }
+.exercise_card_gold { --card-accent: #e5b84b; }
+.exercise_card_green { --card-accent: #4c9b75; }
+.exercise_card_violet { --card-accent: #8173a8; }
+.exercise_card_orange { --card-accent: #e59a48; }
+
+.exercise_number {
+  color: var(--card-accent);
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.exercise_name {
+  margin-top: auto;
+  font-family: Georgia, serif;
+  font-size: 30px;
+}
+
+.exercise_description {
+  max-width: 220px;
+  margin-top: 8px;
+  color: #52636b;
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: 15px;
+  line-height: 1.35;
+}
+
+.exercise_arrow {
+  position: absolute;
+  right: 22px;
+  bottom: 20px;
+  color: var(--card-accent);
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: 24px;
+}
+
+@media (max-width: 720px) {
+  .home_page {
+    padding: 40px 18px 72px;
+  }
+
+  .home_intro {
+    padding: 20px 0 34px;
+  }
+
+  .home_intro h1 {
+    font-size: 48px;
+  }
+
+  .exercise_grid {
+    grid-template-columns: 1fr;
+  }
+
+  .exercise_card {
+    min-height: 180px;
+  }
+}
+
+.home_lessons {
+  width: min(100%, 1080px);
+  margin: 84px auto 0;
+}
+
+.home_section_heading {
+  margin-bottom: 24px;
+}
+
+.home_section_heading .home_kicker {
+  margin-bottom: 8px;
+}
+
+.home_section_heading h2 {
+  font-family: Georgia, serif;
+  font-size: 38px;
+  font-weight: 400;
+}

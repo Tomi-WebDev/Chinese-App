@@ -1,0 +1,28 @@
+.dialoog_container {
+    text-align: center;
+    padding: 170px 20px 90px;
+    background-color: #00AAFF;
+    color: #fff;
+    max-width: 390px;
+}
+
+.dialoog {
+    text-align: left;
+    padding: 15px 20px;
+    line-height: 20px;
+}
+
+.dialoog .dialogue_box {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 5px;
+}
+
+.dialoog .pause {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.dialoog_container .speaker {
+    min-width: 66px;
+}

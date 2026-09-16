@@ -1,0 +1,53 @@
+.falling-hanzi {
+    position: relative;
+    overflow: hidden;
+    height: 900px;
+    width: 390px;
+    padding-top: 130px;
+}
+
+.selection_circle.hanzi {
+    position: absolute;
+    cursor: pointer;
+    left: 50px;
+    top: 130px;
+    animation: fallAnimation 10s linear;
+    /* left: calc(100% * var(--position)); 
+    --position: 0;  */
+}
+
+@keyframes fallAnimation {
+    to {
+      /* transform: translateY(100%); */
+      top: 900px;
+    }
+  }
+
+.sentence-boxes {
+    position: fixed;
+    display: flex;
+    gap: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 70px;
+}
+
+.sentence-box {
+    width: 64px;
+    height: 64px;
+    border: 2px solid black;
+    border-radius: 12px;
+    font-size: 32px;
+
+    text-align: center;
+    padding-top: 15px;
+    /* border: 0.5px solid rgba(0, 0, 0, 0.80); */
+    /* border: none; */
+    resize: none;
+    outline: none;
+    overflow: auto;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    line-height: 1;
+}

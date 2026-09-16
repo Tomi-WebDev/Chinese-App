@@ -1,0 +1,827 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+input.correct_answer {
+  color: green;
+  width: 140px;
+}
+
+input.wrong_answer {
+  color: red;
+  width: 140px;
+}
+
+input.default {
+  color: blue;
+  width: 140px;
+}
+
+/*.navbar {
+  position: fixed; 
+  display: flex;
+  justify-content: space-between;
+  top: 0px;
+  background: #2c9b92;
+  min-height: 50px;
+  padding: 5px 20px;
+  width: 100%; 
+  z-index: 1;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(to bottom, #2c9b92, #258782);
+  border-radius: 5px;
+}
+
+.navbar a {
+  color: #fff; Set the text color to white
+  text-decoration: none; Remove underlines from links
+  margin: 0 10px; Add some spacing between links
+}
+
+.navbar a:hover {
+  text-decoration: underline; Underline links on hover
+}
+
+.navbar h1 {
+  color: lightgreen;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}*/
+
+.native_language {
+  display: flex;
+  gap: 5px;
+}
+
+.native_language img {
+
+  border-radius: 50%;
+  width: 50px;
+  border: 2px solid lightskyblue;
+  /* height: 50px; */
+}
+
+.native_language img:hover {
+
+  border: 2px solid lightgreen;
+}
+
+.native_language img.selected {
+  border: 2px solid lightgreen;
+}
+
+.themes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  /* flex-direction: column; */
+  background-color: #2c9b92;
+  /* background: linear-gradient(to right, #fff, #2c9b92, #fff); */
+  /* animation: gradientAnimation 10s linear infinite; */
+  /* background-size: 200% auto; */
+  padding: 100px 100px 50px;
+  border-bottom: 2px solid teal;
+}
+
+.parent_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(to right, #fff, #2c9b92, #fff);
+  animation: gradientAnimation 10s linear infinite;
+  background-size: 200% auto;
+  min-height: 100vh;
+  padding: 80px 10px;
+}
+
+.exercise_buttons {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.test_container {
+  display: flex;
+  flex-direction: column;
+  margin: 50px auto;
+  gap: 10px;
+}
+
+.test_container .box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  color: #333;
+  background-color: #fff;
+  border: 5px solid teal;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.test_container .box span {
+  font-family: 'Arial', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  /* min-width: 40%; */
+  max-width: 50%;
+  /* margin-right: 10%; */
+}
+
+.input_container {
+  display: flex;
+  min-width: 60%;
+}
+
+/* input {
+  /* margin-right: 10px;
+  min-width: 90%;
+  height: 30px;
+  padding-left: 10px; */
+  /* border-radius: 5px;
+  border: 1px solid rgb(51, 51, 51); */
+
+
+/* button {
+  margin-bottom: 7px;
+  font-size: 24px;
+  padding: 5px 25px;
+  border-radius: 10px;
+  background: linear-gradient(to bottom, #2c9b92, #206e64);
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  transition: all 0.2s ease; 
+  &:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background-color: teal;
+    transform: translate(-50%, -50%) scale(1.05);
+    border-radius: 10px;
+    z-index: -1;
+    opacity: 0;
+    transition: all 0.2s ease; 
+  } */
+
+  /* Hover effect - Indentation and color change
+  &:hover {
+    transform: translateY(3px);
+    &:before {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+  }
+
+  Click effect - Further indentation
+  &:active {
+    transform: translateY(6px);
+  }
+} */
+
+.score {
+  /* background: linear-gradient(to right, #fff, #2c9b92, #fff); */
+  padding: 10px;
+  /* border-radius: 10px; */
+  color: #333; /* Text color, adjust as needed */
+  font-size: 18px; /* Font size, adjust as needed */
+  font-weight: bold; /* Font weight, adjust as needed */
+  text-align: center; /* Center the text horizontally */
+}
+
+/* CSS for the Flashcard component */
+
+ .flashcard_container {
+  max-width: 390px;
+}
+/*
+.flashcard {
+  width: 300px;
+  height: 200px; 
+  perspective: 1000px; 
+  margin: 10px;
+  cursor: pointer;
+} */
+
+/* .card {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+  transform-origin: center;
+}
+
+.front, .back {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;  */
+  /* border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  backface-visibility: hidden;
+  transition: opacity 0.5s;
+}
+
+.front {
+  transform: rotateY(0deg);
+}
+
+.back {
+  transform: rotateY(180deg);
+  opacity: 0;
+} */
+
+/* Your text styles for front and back here */
+/* .front span, .back span {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333; 
+} */
+
+/* Define 'flipped' class for animation */
+/* .flipped .card {
+  transform: rotateY(180deg);
+}
+
+.flipped .front {
+  opacity: 0;
+}
+
+.flipped .back {
+  opacity: 1;
+} */
+
+
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 0%;
+  }
+
+  50% {
+    background-position: 100% 0%;
+  }
+
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+.multiple_choice_container {
+  width: 100%;
+  margin: 50px auto;
+  max-width: 600px;
+  background-color: #fff;
+  border: 5px solid teal;
+  border-radius: 10px;
+  color: #333;
+  padding: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 0; /* Ensure the box is above the sticking-out box */
+}
+
+.multiple_choice_header {
+  display: flex;
+  gap: 30px;
+}
+
+.number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: white;
+  background-color: teal;
+  /* border: 2px solid lightgrey; */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.multiple_choice_container p {
+  margin-left: -20px;
+}
+
+.multiple_choice_container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+}
+
+.multiple_choice_container li {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+label {
+  /* margin-left: 10px; */
+  /* width: 10%; */
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  cursor: pointer;
+  /* gap: 10px; */
+}
+
+input[type="radio"] {
+  width: 30px;
+  margin-right: 10px;
+}
+
+span.correct-answer {
+  color: green;
+  margin-right: 10px;
+}
+
+span.incorrect-answer {
+  color: red;
+  margin-right: 10px;
+}
+
+.quiz-button {
+  margin-top: 20px;
+  font-size: 18px;
+  padding: 5px 25px;
+  border-radius: 10px;
+  background: linear-gradient(to bottom, #2c9b92, #206e64);
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.quiz-button:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background-color: teal;
+  transform: translate(-50%, -50%) scale(1.05);
+  border-radius: 10px;
+  z-index: -1;
+  opacity: 0;
+  transition: all 0.2s ease;
+}
+
+.quiz-button:hover {
+  transform: translateY(3px);
+}
+
+.quiz-button:hover:before {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+
+.quiz-button:active {
+  transform: translateY(6px);
+}
+
+.quiz-score {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+/* .tick {
+  position: absolute;
+  right: 0;
+} */
+
+.multiple_choice_container ul li {
+  position: relative;
+}
+
+/*         Months          */
+
+.drag_drop_parent {
+  border: 5px solid teal;
+  width: 100%;
+  max-width: 800px;
+  /* max-height: 100vh; */
+  margin: 50px auto;
+  border-radius: 20px;
+  padding: 20px;
+  background-color: #fff;
+}
+
+/* .fill_sentence_parent {
+  border: 5px solid green;
+  max-width: 600px;
+  margin: 127px auto;
+  border-radius: 20px;
+  padding: 20px;
+  background-color: #fff;
+} */
+
+.title {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* .header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+} */
+
+/* .months_parent .back {
+  top: -12px;
+  left: -8px;
+} */
+
+.circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: green;
+  border-radius: 50%;
+  font-size: 32px;
+  color: #fff;
+  font-weight: 900;
+}
+
+.answer_column {
+  /* padding: 0 10%; */
+  /* padding-bottom: 5px; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 10px;
+  /* flex-direction: column; */
+  align-items: space-between;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.answer_column_input {
+  /* padding: 0 10%; */
+  /* padding-bottom: 5px; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+  /* flex-direction: column; */
+  align-items: space-between;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.answer_column_input input {
+  width: 100%;
+    padding: 10px;
+    /* border: 1px solid lightgreen; */
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+    margin-top: 5px;
+    /* border-bottom: none; */
+  border: 1px solid lightgreen;
+  color: teal;
+}
+
+/* .answer_column_input .input_group input:focus {
+  color: teal;
+} */
+
+.input_group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 600px;
+  margin-bottom: 10px;
+  gap: 10px;
+  font-size: 24px;
+  user-select: none;
+  border-bottom: 1px solid teal;
+  padding-bottom: 10px;
+  margin: 0 10%;
+}
+
+.input_group:last-child {
+  border: none;
+}
+/* .input_group.answers {
+  width: 93%;
+  font-size: 18px;
+} */
+
+.input_group label {
+  color: green;
+  font-size: 20px;
+  vertical-align: bottom;
+}
+
+.input_group.answers label {
+  font-size: 18px;
+}
+
+.input_group input {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid lightgreen;
+  margin-left: 10px;
+  color: blue;
+  width: 100%;
+  font-size: 18px;
+}
+
+.word_segments {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+  padding: 20px;
+  font-size: 28px;
+}
+
+.drag_elements__relative_parent {
+  display: flex;
+  flex-wrap: wrap;
+  /* width: 250px; */
+  padding: 20px;
+  font-size: 28px;
+  gap: 10px;
+}
+
+.key_box {
+  position: relative;
+  border: 1px solid teal;
+  border-radius: 10px;
+  padding: 3px;
+  font-size: 24px;
+}
+
+.drag_elements_relative {
+  border: 1px solid #000;
+  border-radius: 10px;
+  padding: 3px;
+}
+
+:hover {
+  cursor: pointer;
+}
+
+.key_box:hover {
+  cursor: pointer;
+}
+
+/* .answer_box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 150px;
+  width: 40%;
+  max-width: 200px;
+  min-height: 30px;
+  border: 1px solid green;
+  border-radius: 5px;
+  padding: 5px 10px;
+} */
+
+.answer_container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  /* padding-bottom: 8px; */
+  /* border-bottom: 1px solid teal; */
+}
+
+/* .input_group.answers .answer_container:not(:last-child) {
+  border-bottom: 1px solid teal;
+} */
+
+/* .input_group .answer_container:first-child {
+  border: none;
+} */
+
+.answer_box.empty {
+  position: relative;
+}
+
+.submit {
+  display: flex;
+  /* flex-direction: column; */
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.score {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+}
+
+.score p:first-child {
+  font-size: 32px;
+  font-weight: 900
+}
+
+.input_group .correct_answer {
+  color: green;
+  min-width: 200px;
+}
+
+.input_group .wrong_answer {
+  color: red;
+  min-width: 200px;
+}
+
+/* .sentence {
+  flex-wrap: wrap;
+  min-height: 50px;
+  gap: 5px;
+  width: 100%;
+  max-width: none;
+  margin-bottom: 10px;
+  border-top-style: dashed;
+} */
+
+.sentence .key_box {
+  border-radius: 3px;
+}
+
+.sentence .key_box:hover {
+  background-color: #ccc;
+  /* transition: background_color 1s ease-in-out; */
+}
+
+.sentence_translation {
+  text-align: center;
+  /* margin-bottom: 5px; */
+  padding: 5px 0;
+  font-size: 20px;
+  border: solid 1px green;
+  border-bottom: none;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+/* Sentence Input */
+
+/* CSS file (styles.css) */
+
+.sentence_multiple_choice_container {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  gap: 10px;
+  padding: 20px;
+  background-color: #fff;
+  border: 5px solid teal;
+  /* background: linear-gradient(to bottom right, teal, lightgreen); */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.sentence_multiple_choice_container label {
+  color: teal;
+}
+
+.verb_multiple_choice {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+input[type="radio"] {
+  appearance: none; /* Remove the default radio button appearance */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 20px; /* Adjust the size of the radio button */
+  height: 20px;
+  border: 2px solid lightgray; /* Border color for the unselected circle */
+  border-radius: 50%; /* Makes it a circle */
+  outline: none; /* Remove the default outline on focus */
+  /* background-clip: content-box; */
+  position: relative;
+}
+
+input[type="radio"]:hover {
+  /* padding: 3px; */
+  border: 2px solid teal;
+}
+
+input[type="radio"]:checked {
+  /* padding: 3px; */
+  background-color: lightgreen; /* Change the circle color for selected radio buttons */
+}
+
+.sentence_input_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #fff;
+  border: 5px solid teal;
+  /* background: linear-gradient(to bottom right, teal, lightgreen); */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.verb_translate {
+  margin: 10px;
+  text-align: center;
+}
+
+.sentence_input_container input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid lightgreen;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+  margin-top: 5px;
+}
+
+.sentence_input_container input[type="text"]:focus {
+  background: white;
+  color: teal;
+}
+
+/* .sentence_input_container button {
+  background: teal;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background: lightgreen;
+} */
+
+/* p {
+  color: teal;
+  font-weight: bold;
+} */
+
+/* .header {
+  width: 90%;
+  background-color: teal;
+  color: #fff;
+  border: 2px solid black;
+  border-radius: 10px;
+  min-height: 60px;
+  margin: 0 auto;
+  font-size: 32px;
+} */
+
+
+
+.everyday_phrases_container {
+  padding: 50px 50px;
+    background: linear-gradient(to right, #fff, #2c9b92, #fff);
+    animation: gradientAnimation 10s linear infinite;
+    background-size: 200% auto;
+    overflow: hidden;
+}
+
+/* Media query for responsiveness */
+@media screen and (max-width: 600px) {
+  .sentence_input_container {
+    max-width: 90%;
+  }
+}
