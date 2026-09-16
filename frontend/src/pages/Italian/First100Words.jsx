@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import "./Italian.css";
 
-import Navbar from "../../components/UI/Navbar/Navbar";
-import Footer from "../../components/UI/Footer/Footer";
+import NavbarChinese from "../../components/UI/Navbar/NavbarChinese";
+import FooterChinese from "../../components/UI/Footer/FooterChinese";
 import InputAnswer from "../../components/InputAnswer";
 import Flashcard from "../../components/Flashcard/Flashcard";
 import InputList from "../../components/InputList";
@@ -709,7 +709,7 @@ const First100Words = ({ lessonVocabulary }) => {
 
     return (
         <div className="parent_container_app">
-          <Navbar onGameSelect={handleExerciseClick} onSearch={handleSearch}/>
+          <NavbarChinese onGameSelect={handleExerciseClick}/>
           {selectedExercise === "Test" &&  <InputList correctAnswers={answers} words={words} labelValues={labelValues} pinyin={pinyin} showPinyin={showPinyin} togglePinyin={togglePinyin}/>}
           {selectedExercise === "Flashcards" && <div className="flashcard_container">
                     {vocabularyList.map((word, index) => (
@@ -727,7 +727,7 @@ const First100Words = ({ lessonVocabulary }) => {
           {selectedExercise === "Sudoku" && <Sudoku1/>}
           {selectedExercise === "Basket" && <PickHanzi/>}
           {/* {selectedExercise === "Dialoog" && <Dialoog />} */}
-          <Footer showPinyin={showPinyin} togglePinyin={togglePinyin}/>
+          <FooterChinese showPinyin={showPinyin} togglePinyin={togglePinyin}/>
         </div>
     )
 }

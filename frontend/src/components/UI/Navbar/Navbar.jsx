@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import "./Navbar.css";
+/* import "./Navbar.css"; */
+import "./NavbarAlt.css";
 
 import filter from "../../../assets/icons/filter.svg";
 import search from "../../../assets/icons/search.svg";
@@ -23,28 +24,8 @@ const Navbar = ({ onGameSelect, onSearch }) => {
       };
 
     return (
-        <div className="navbar">
-            <div className="search_user_container">
-                <div className="search_bar">
-                    <img src={filter} alt="filter" />
-                    <input 
-                        type="text" 
-                        placeholder="Search"
-                        value={searchInput}
-                        onChange={handleSearchInputChange}
-                    />
-                    <img src={search} alt="search" onClick={handleSearch}/>
-                </div>
-                <div className="user"></div>
-            </div>  
-            <div className="mode_boxes_container">
-                {/* <div
-                    className={`mode_box ${selectedGame === "Dialoog" ? "selected" : ""}`}
-                    onClick={() => handleGameClick("Dialoog")}
-                    >
-                    Dialoog
-                </div> */}
-                <div
+        <div className="navbar navbar-alt">
+            <div
                     className={`mode_box ${selectedGame === "Test" ? "selected" : ""}`}
                     onClick={() => handleGameClick("Test")}
                     >
@@ -58,7 +39,27 @@ const Navbar = ({ onGameSelect, onSearch }) => {
                     >
                     Flashcards
                 </div>
-                <div
+            {/*<div className="search_user_container">
+                <div className="search_bar">
+                    <img src={filter} alt="filter" />
+                    <input 
+                        type="text" 
+                        placeholder="Search"
+                        value={searchInput}
+                        onChange={handleSearchInputChange}
+                    />
+                    <img src={search} alt="search" onClick={handleSearch}/>
+                </div>
+                <div className="user"></div>
+            </div>  */}
+            {/*<div className="mode_boxes_container">
+                {/* <div
+                    className={`mode_box ${selectedGame === "Dialoog" ? "selected" : ""}`}
+                    onClick={() => handleGameClick("Dialoog")}
+                    >
+                    Dialoog
+                </div> */}
+                {/*<div
                     className={`mode_box ${selectedGame === "Sentences" ? "selected" : ""}`}
                     onClick={() => handleGameClick("Sentences")}
                     >
@@ -82,7 +83,7 @@ const Navbar = ({ onGameSelect, onSearch }) => {
                     >
                     Basket
                 </div> 
-            </div>
+            </div>*/}
         </div>
     )
 } 

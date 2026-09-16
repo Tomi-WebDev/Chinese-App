@@ -1,6 +1,7 @@
 // Flashcard.js
 import React, { useState, useEffect } from 'react';
-import "./Flashcard.css";
+/* import "./Flashcard.css"; */
+import "./FlashcardAlt.css";
 
 const Flashcard = ({key, french, german, pinyin, showPinyin}) => {
   const [isFlipped, setIsFlipped] = useState(false);

@@ -1,0 +1,77 @@
+.navbar-chinese {
+    position: fixed;
+    top: 0px;
+    left: 50%;
+    z-index: 20;
+    display: flex;
+    /*width: min(420px, calc(100% - 32px));*/
+    width: 100%;
+    gap: 12px;
+    justify-content: center;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    transform: translateX(-50%);
+    border: 1px solid rgba(23, 37, 46, 0.12);
+    border-radius: 0px 0px 6px 6px;
+    background: rgba(255, 255, 255, 0.82);
+    box-shadow: 0 14px 30px rgba(43, 65, 70, 0.08);
+    backdrop-filter: blur(8px);
+}
+
+.navbar-chinese_button {
+    flex: 1;
+    min-height: 40px;
+    padding: 8px 16px;
+    border: 0;
+    border-radius: 4px;
+    background: #3298b5;
+    color: #fff;
+    font-family: "Trebuchet MS", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 180ms ease, background 180ms ease;
+}
+
+.navbar-chinese_button:hover,
+.navbar-chinese_button:focus-visible {
+    background: #2a7b92;
+    transform: translateY(-2px);
+}
+
+.navbar-chinese_button:focus-visible {
+    outline: 3px solid rgba(23, 37, 46, 0.35);
+    outline-offset: 3px;
+}
+
+.navbar-chinese_button.is-selected {
+    background: linear-gradient(135deg, #e86f51, #e59a48);
+}
+
+@media (max-width: 480px) {
+    .navbar-chinese {
+        top: 0px;
+        width: calc(100% - 20px);
+        gap: 8px;
+    }
+
+    .navbar-chinese_button {
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 390px) {
+    .navbar-chinese {
+        flex-direction: column;
+    }
+}
+
+@media (min-width: 720px) {
+
+    .navbar-chinese_button {
+        max-width: 300px;
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+}

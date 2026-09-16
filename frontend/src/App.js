@@ -1,4 +1,5 @@
-import './App.css';
+/* import './App.css'; */
+import './AppTheme.css';
 import First100Words from './pages/Italian/First100Words';
 import IrregularVerbsGerman from './pages/German/IrregularVerbsPast.jsx';
 import Footer from './components/UI/Footer/Footer.jsx';
@@ -17,7 +18,18 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 // import Login from './Login';
 // import Signup from './Signup';
 
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
+import { useLocation } from 'react-router-dom';
+
+function ScrollToTop() {
+  const { pathname, search } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname, search]);
+
+  return null;
+}
 
 function App() {
 
@@ -56,6 +68,7 @@ function App() {
   return (
     <div className="App">
       <Router>
+        <ScrollToTop />
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />

@@ -1,0 +1,116 @@
+.input_list {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: min(100%, 820px);
+    margin: 40px auto 110px;
+    padding: 22px 16px 32px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(23, 37, 46, 0.12);
+    box-shadow: 0 14px 30px rgba(43, 65, 70, 0.08);
+}
+
+.list_item {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: min(100%, 700px);
+    padding: 16px 18px;
+    margin-bottom: 12px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(23, 37, 46, 0.08);
+}
+
+.list_item span {
+    color: #17252e;
+    font-size: 32px;
+    font-weight: 400;
+}
+
+.list_item .pinyin {
+    position: absolute;
+    top: 7px;
+    left: 18px;
+    font-size: 14px;
+    color: #6e7d86;
+}
+
+.list_item span.active {
+    margin-top: 14px;
+}
+
+.list_item input {
+    width: 220px;
+    height: 40px;
+    padding: 0 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(23, 37, 46, 0.08);
+    background: rgba(247, 244, 238, 0.9);
+    color: #17252e;
+    font-size: 16px;
+}
+
+.list_item input::placeholder {
+    color: rgba(23, 37, 46, 0.55);
+}
+
+.input_list button {
+    margin-top: 10px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #e86f51, #e59a48);
+    color: #fff;
+    font-size: 17px;
+    font-weight: 700;
+    padding: 12px 20px;
+    cursor: pointer;
+    box-shadow: 0 12px 22px rgba(232, 111, 81, 0.2);
+}
+
+input.correct_answer {
+    color: #1a7a53;
+    width: 220px;
+}
+
+input.wrong_answer {
+    color: #b64b45;
+    width: 220px;
+}
+
+input.default {
+    color: #17252e;
+    width: 220px;
+}
+
+@media (max-width: 290px) {
+
+    .list_item input {
+    width: 110px;
+    height: 40px;
+    padding: 0 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(23, 37, 46, 0.08);
+    background: rgba(247, 244, 238, 0.9);
+    color: #17252e;
+    font-size: 16px;
+}
+
+    input.correct_answer {
+    color: #1a7a53;
+    width: 110px;
+    }
+
+    input.wrong_answer {
+        color: #b64b45;
+        width: 110px;
+    }
+
+    input.default {
+        color: #17252e;
+        width: 110px;
+    }
+}

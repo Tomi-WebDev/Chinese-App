@@ -1,0 +1,31 @@
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(1080px, calc(100% - 24px));
+    height: 58px;
+    padding: 8px 20px;
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(23, 37, 46, 0.12);
+    border-bottom: none;
+    border-radius: 18px 18px 0 0;
+    box-shadow: 0 -12px 24px rgba(43, 65, 70, 0.08);
+    backdrop-filter: blur(8px);
+}
+
+.footer img {
+    width: 30px;
+    height: 30px;
+    opacity: 0.9;
+}
+
+.footer img.active {
+    background: rgba(232, 111, 81, 0.08);
+    border-radius: 8px;
+    padding: 4px;
+}

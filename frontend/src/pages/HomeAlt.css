@@ -1,0 +1,159 @@
+.home_page {
+  min-height: 100vh;
+  padding: 80px 24px 96px;
+  color: #eaf6ff;
+  background:
+    radial-gradient(circle at top left, rgba(88, 187, 255, 0.28), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(111, 255, 203, 0.2), transparent 26%),
+    linear-gradient(135deg, #071a2b 0%, #0d2338 42%, #102a3d 100%);
+}
+
+.home_intro,
+.exercise_grid,
+.home_lessons {
+  width: min(100%, 1100px);
+  margin: 0 auto;
+}
+
+.home_intro {
+  padding: 20px 0 44px;
+}
+
+.home_kicker {
+  margin: 0 0 14px;
+  color: #7fe4ff;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.home_intro h1 {
+  max-width: 760px;
+  margin: 0 0 16px;
+  font-size: clamp(42px, 6vw, 82px);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  font-weight: 700;
+  color: #f7fbff;
+}
+
+.home_subtitle {
+  max-width: 560px;
+  color: rgba(234, 246, 255, 0.8);
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.exercise_grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.exercise_card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 220px;
+  padding: 22px 20px 24px;
+  border: 1px solid rgba(143, 208, 255, 0.16);
+  border-radius: 20px;
+  background: rgba(12, 30, 42, 0.76);
+  box-shadow: 0 16px 40px rgba(1, 10, 18, 0.38);
+  text-decoration: none;
+  color: #f1fbff;
+  overflow: hidden;
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.exercise_card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 7px;
+  background: var(--card-accent);
+}
+
+.exercise_card:hover,
+.exercise_card:focus-visible {
+  transform: translateY(-6px);
+  border-color: rgba(127, 228, 255, 0.42);
+  box-shadow: 0 20px 48px rgba(4, 18, 28, 0.52);
+}
+
+.exercise_card:focus-visible {
+  outline: 3px solid rgba(127, 228, 255, 0.45);
+  outline-offset: 3px;
+}
+
+.exercise_card_coral { --card-accent: #ff8a6b; }
+.exercise_card_blue { --card-accent: #60b5ff; }
+.exercise_card_gold { --card-accent: #f7c65f; }
+.exercise_card_green { --card-accent: #6fe4b0; }
+.exercise_card_violet { --card-accent: #b69ef6; }
+.exercise_card_orange { --card-accent: #ffb25e; }
+
+.exercise_number {
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  font-weight: 700;
+  color: var(--card-accent);
+}
+
+.exercise_name {
+  margin-top: auto;
+  font-size: clamp(28px, 2vw, 36px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.exercise_description {
+  margin-top: 10px;
+  max-width: 220px;
+  color: rgba(234, 246, 255, 0.72);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.exercise_arrow {
+  position: absolute;
+  right: 22px;
+  bottom: 18px;
+  font-size: 26px;
+  color: var(--card-accent);
+}
+
+.home_lessons {
+  margin-top: 76px;
+}
+
+.home_section_heading {
+  margin-bottom: 24px;
+}
+
+.home_section_heading h2 {
+  margin: 0;
+  color: #f5fbff;
+  font-size: clamp(30px, 3vw, 44px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+@media (max-width: 720px) {
+  .home_page {
+    padding: 48px 18px 72px;
+  }
+
+  .exercise_grid {
+    grid-template-columns: 1fr;
+  }
+
+  .exercise_card {
+    min-height: 180px;
+  }
+
+  .home_intro {
+    padding-bottom: 28px;
+  }
+}

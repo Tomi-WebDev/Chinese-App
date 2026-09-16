@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import "./InputList.css";
+/* import "./InputList.css"; */
+import "./InputListAlt.css";
 
 import completedSound from "../assets/audio/mixkit-instant-win-2021.wav";
 import Congratulations from "./UI/CongratulationsPopUp/Congratulations";
