@@ -34,8 +34,13 @@ body {
 }
 
 .parent_container_app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   min-height: 100vh;
-  padding-top: 70px;
+  box-sizing: border-box;
+  padding: 70px 0;
   background:
     radial-gradient(circle at 88% 8%, rgba(255, 197, 102, 0.35), transparent 28%),
     linear-gradient(135deg, var(--home-bg-1) 0%, var(--home-bg-2) 100%);

@@ -79,6 +79,7 @@ const Sudoku = (props) => {
 
     const [userAnswers, setUserAnswers] = useState(props.unfilledGrid.map(row => row.map(() => "")));
     const [colors, setColors] = useState(props.unfilledGrid.map(row => row.map(() => "")));
+    const [draggingValue, setDraggingValue] = useState(null);
 
     const compareAnswers = async () => {
         console.log(userAnswers);
@@ -131,6 +132,40 @@ const Sudoku = (props) => {
         event.dataTransfer.setData('text/rowIndex', rowIndex.toString());
         event.dataTransfer.setData('text/columnIndex', columnIndex.toString());
     };
+
+    const placeAnswer = (value, rowIndex, columnIndex) => {
+        setUserAnswers((previousAnswers) => {
+            const newAnswers = previousAnswers.map((row) => [...row]);
+            newAnswers[rowIndex][columnIndex] = value;
+            return newAnswers;
+        });
+    };
+
+    const handlePointerDown = (event, value) => {
+        event.preventDefault();
+        event.currentTarget.setPointerCapture(event.pointerId);
+        setDraggingValue(value);
+    };
+
+    const handlePointerUp = (event) => {
+        if (draggingValue === null) {
+            return;
+        }
+
+        const target = document.elementFromPoint(event.clientX, event.clientY);
+        const cell = target?.closest(".sudoku_cell[data-row][data-column]");
+
+        if (cell) {
+            placeAnswer(
+                draggingValue,
+                Number(cell.dataset.row),
+                Number(cell.dataset.column)
+            );
+        }
+
+        event.currentTarget.releasePointerCapture(event.pointerId);
+        setDraggingValue(null);
+    };
     
     const handleDropContainer = (event, rowIndex, columnIndex) => {
         event.preventDefault();
@@ -141,9 +176,7 @@ const Sudoku = (props) => {
     
         // Ensure that the drop is within the Sudoku grid
         if (!isNaN(draggedRowIndex) && !isNaN(draggedColumnIndex)) {
-            const newAnswers = [...userAnswers];
-            newAnswers[rowIndex][columnIndex] = draggedMonth;
-            setUserAnswers(newAnswers);
+            placeAnswer(draggedMonth, rowIndex, columnIndex);
         }
     };
     
@@ -162,10 +195,14 @@ const Sudoku = (props) => {
                     {props.reference.map((item, index) => (
                                 <div className="selection_circle" key={index}>
                                     <p
-                                        // className={`key_box`}
+                                        className={draggingValue === item.german ? "is-dragging" : ""}
                                         draggable={true}
                                         onDragStart={(e) => handleDragStart(e, item.german, index, 0)}  // Assuming columnIndex is 0
                                         onDragOver={handleDragOver}
+                                        onPointerDown={(e) => handlePointerDown(e, item.german)}
+                                        onPointerMove={(e) => e.preventDefault()}
+                                        onPointerUp={handlePointerUp}
+                                        onPointerCancel={() => setDraggingValue(null)}
                                     >{item.german}</p>
                                 </div>
                     ))}
@@ -201,6 +238,8 @@ const Sudoku = (props) => {
                             <div
                                 key={columnIndex}
                                 className={`sudoku_cell ${letter !== '' ? 'empty-cell' : ''} ${props.specificClass}`}
+                                data-row={rowIndex}
+                                data-column={columnIndex}
                             >
                                 {letter}
                                 {letter === '' ? (

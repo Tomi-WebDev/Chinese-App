@@ -50,8 +50,6 @@
 
 @media (max-width: 480px) {
     .navbar-chinese {
-        top: 0px;
-        width: calc(100% - 20px);
         gap: 8px;
     }
 
@@ -63,7 +61,7 @@
 
 @media (max-width: 390px) {
     .navbar-chinese {
-        flex-direction: column;
+        /*flex-direction: column;*/
     }
 }
 

@@ -10,6 +10,7 @@ const NavbarChinese = ({ onGameSelect }) => {
     };
 
     return (
+
         <nav className="navbar-chinese" aria-label="Exercise navigation">
             <button
                 className={`navbar-chinese_button ${selectedGame === "Test" ? "is-selected" : ""}`}

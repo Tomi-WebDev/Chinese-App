@@ -5,13 +5,13 @@
     align-items: center;
     /* max-width: 1200px; */
     background-color: #fff;
-    padding: 160px 0 90px;
-    width: 360px;
+    padding: 0px;
+    width: 360px;    
+    border-radius: 10px;
 }
 
 .color_sudoku_parent .header {
     position: relative;
-    margin-bottom: 20px;
 }
 
 .color_sudoku {
@@ -69,30 +69,44 @@
     display: flex;
     justify-content: center;
     align-items: space-between;
-    gap: 54px;
+    gap: 8px;
     row-gap: 34px;
     flex-wrap: wrap;
     width: 100%;
     max-width: 600px;
     /* height: 162px; */
-    margin: 0 auto 40px;
+    margin: 10px auto 10px;
 }
 
 .selection_circle {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 64px;
-    height: 64px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
     background: var(--Input-Grey, #F1F1F3);
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     color: #000;
     font-family: 'Proxima Nova', sans-serif;
-    font-size: 32px;
+    font-size: 24px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+}
+
+.selection_circle p {
+    margin: 0;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    touch-action: none;
+    cursor: grab;
+}
+
+.selection_circle p.is-dragging {
+    opacity: 0.6;
+    cursor: grabbing;
 }
 
 table {
@@ -114,7 +128,7 @@ th {
 }
 
 .color_sudoku {
-    margin-bottom: 20px;
+    margin-bottom: 0px;
 }
 
 .empty-cell {
