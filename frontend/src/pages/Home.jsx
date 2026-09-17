@@ -5,8 +5,8 @@ import "./Home.css";
 
 const exercises = [
   {
-    name: "Test",
-    description: "Check your vocabulary and build recall.",
+    name: "HSK 1",
+    description: "Initials A - C as of 17.09",
     accent: "coral",
   },
   {
@@ -37,9 +37,34 @@ const exercises = [
 ];
 
 const lessons = [
-  { name: "Lesson 1", description: "Add the vocabulary for your first lesson.", path: "/lesson-1", accent: "coral" },
-  { name: "Lesson 2", description: "Build the next set of words to practise.", path: "/lesson-2", accent: "blue" },
-  { name: "Lesson 3", description: "Keep growing your vocabulary list.", path: "/lesson-3", accent: "green" },
+  { name: "Урок 1", description: "一，二，三，人，大，天，小，口，日，目，白，马，吗，女，妈妈，子，好", path: "/lesson-1", accent: "coral" },
+  { name: "Урок 2", description: "Build the next set of words to practise.", path: "/lesson-2", accent: "blue" },
+  { name: "Урок 3", description: "Keep growing your vocabulary list.", path: "/lesson-3", accent: "green" },
+  { name: "Урок 4", description: "俄语，法语，英语，明天，去，见，对，邮局，寄，信，银行，取，钱", path: "/lesson-4", accent: "orange" },
+];
+
+const hanyuJiaochengLessons = [
+  {
+    name: "Lesson 1",
+    description: "Start with the first Hanyu Jiaocheng lesson.",
+    path: "/hanyu-jiaocheng-lesson-1",
+    accent: "gold",
+  },
+];
+
+const hsk1Lessons = [
+  {
+    name: "Lesson 1",
+    description: "Begin the first HSK 1 lesson.",
+    path: "/hsk1-lesson-1",
+    accent: "violet",
+  },
+];
+
+const lessonSections = [
+  { kicker: "Уводен Курс", title: "Избери Урок", lessons },
+  { kicker: "Hanyu Jiaocheng", title: "Choose a Hanyu Jiaocheng lesson", lessons: hanyuJiaochengLessons },
+  { kicker: "HSK 1", title: "Choose an HSK 1 lesson", lessons: hsk1Lessons },
 ];
 
 const Home = () => {
@@ -68,26 +93,28 @@ const Home = () => {
         ))}
       </section>
 
-      <section className="home_lessons">
-        <div className="home_section_heading">
-          <p className="home_kicker">Your lessons</p>
-          <h2>Choose a lesson</h2>
-        </div>
-        <div className="exercise_grid" aria-label="Lessons">
-          {lessons.map((lesson, index) => (
-            <Link
-              className={`exercise_card exercise_card_${lesson.accent}`}
-              to={lesson.path}
-              key={lesson.name}
-            >
-              <span className="exercise_number">0{index + 1}</span>
-              <span className="exercise_name">{lesson.name}</span>
-              <span className="exercise_description">{lesson.description}</span>
-              <span className="exercise_arrow" aria-hidden="true">-&gt;</span>
-            </Link>
-          ))}
-        </div>
-      </section>
+      {lessonSections.map((section, sectionIndex) => (
+        <section className="home_lessons" key={`${section.kicker}-${sectionIndex}`}>
+          <div className="home_section_heading">
+            <p className="home_kicker">{section.kicker}</p>
+            <h2>{section.title}</h2>
+          </div>
+          <div className="exercise_grid" aria-label={section.title}>
+            {section.lessons.map((lesson, index) => (
+              <Link
+                className={`exercise_card exercise_card_${lesson.accent}`}
+                to={lesson.path}
+                key={`${section.kicker}-${lesson.name}-${index}`}
+              >
+                <span className="exercise_number">0{index + 1}</span>
+                <span className="exercise_name">{lesson.name}</span>
+                <span className="exercise_description">{lesson.description}</span>
+                <span className="exercise_arrow" aria-hidden="true">-&gt;</span>
+              </Link>
+            ))}
+          </div>
+        </section>
+      ))}
     </main>
   );
 };

@@ -56,3 +56,38 @@ export const lesson3Vocabulary = [
   { english: "голям брат", chinese: "哥哥", pinyin: "gēge" },
   { english: "баща", chinese: "爸爸", pinyin: "bàba" },
 ];
+
+export const lesson4Vocabulary = [
+  { english: "руски език", chinese: "俄语", pinyin: "éyǔ" },
+  { english: "отивам", chinese: "去", pinyin: "qù" },
+  { english: "френски език", chinese: "法语", pinyin: "fǎyǔ" },
+  { english: "утре", chinese: "明天", pinyin: "míngtiān" },
+  { english: "виждам", chinese: "见", pinyin: "jiàn" },
+  { english: "английски език", chinese: "英语", pinyin: "yīngyǔ" },
+  { english: "да, правилен", chinese: "对", pinyin: "duì" },
+  { english: "поща", chinese: "邮局", pinyin: "yóujú" },
+  { english: "изпращам (писмо)", chinese: "寄", pinyin: "jì" },
+  { english: "писмо", chinese: "信", pinyin: "xìn" },
+  { english: "банка", chinese: "银行", pinyin: "yínháng" },
+  { english: "тегля (пари)", chinese: "取", pinyin: "qǔ" },
+  { english: "пари", chinese: "钱", pinyin: "qián" },
+];
+
+export const hanyuJiaochengLesson1Vocabulary = [
+];
+
+export const hsk1Lesson1Vocabulary = [
+  { english: "hello", chinese: "你好", pinyin: "nǐ hǎo" },
+  { english: "Ms. Wang", chinese: "王老师", pinyin: "Wáng lǎoshī" },
+  { english: "everybody", chinese: "大家", pinyin: "dàjiā" },
+  { english: "good; fine", chinese: "好", pinyin: "hǎo" },
+  { english: "student", chinese: "学生", pinyin: "xuésheng" },
+  { english: "suffix for plural", chinese: "们", pinyin: "men" },
+  { english: "teacher", chinese: "老师", pinyin: "lǎoshī" },
+  { english: "you (polite)", chinese: "您", pinyin: "nín" },
+  { english: "you (plural)", chinese: "你们", pinyin: "nǐmen" },
+  { english: "thank you", chinese: "谢谢", pinyin: "xièxiè" },
+  { english: "you're welcome", chinese: "不客气", pinyin: "bú kèqi" },
+  { english: "classmate", chinese: "同学", pinyin: "tóngxué" },
+  { english: "goodbye", chinese: "再见", pinyin: "zàijiàn" }
+];
