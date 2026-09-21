@@ -58,8 +58,42 @@
     color: rgba(23, 37, 46, 0.55);
 }
 
-.input_list button {
+.lesson_action_stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
     margin-top: 10px;
+}
+
+.lesson_nav_controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: min(100%, 460px);
+    gap: 12px;
+}
+
+.lesson_action_row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.lesson_nav_button,
+.shuffle_button,
+.reverse_button {
+    min-width: 110px;
+}
+
+.shuffle_button,
+.reverse_button {
+    min-width: 130px;
+}
+
+.input_list button {
+    margin-top: 0;
     border: none;
     border-radius: 10px;
     background: linear-gradient(135deg, #e86f51, #e59a48);
@@ -69,6 +103,12 @@
     padding: 12px 20px;
     cursor: pointer;
     box-shadow: 0 12px 22px rgba(232, 111, 81, 0.2);
+}
+
+.input_list button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    box-shadow: none;
 }
 
 input.correct_answer {

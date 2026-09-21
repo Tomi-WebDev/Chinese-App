@@ -19,11 +19,11 @@ const exercises = [
     description: "Practice useful sentences with audio.",
     accent: "gold",
   },
-  {
+  /*{
     name: "Phrases",
     description: "Train short phrases for everyday use.",
     accent: "green",
-  },
+  },*/
   {
     name: "Sudoku",
     description: "Put your Chinese reading skills to work.",
@@ -38,9 +38,10 @@ const exercises = [
 
 const lessons = [
   { name: "Урок 1", description: "一，二，三，人，大，天，小，口，日，目，白，马，吗，女，妈妈，子，好", path: "/lesson-1", accent: "coral" },
-  { name: "Урок 2", description: "Build the next set of words to practise.", path: "/lesson-2", accent: "blue" },
+  { name: "Урок 2", description: "木，本，也，门，们，他，她，你，您，我，五，八，不，太，男", path: "/lesson-2", accent: "blue" },
   { name: "Урок 3", description: "Keep growing your vocabulary list.", path: "/lesson-3", accent: "green" },
-  { name: "Урок 4", description: "俄语，法语，英语，明天，去，见，对，邮局，寄，信，银行，取，钱", path: "/lesson-4", accent: "orange" },
+  { name: "Урок 4", description: "俄语，法语，英语，德语，意大利语，西班牙语，保加利亚语，日语，韩国语，明天，阿拉伯语，去，见，对，邮局，寄，信，银行，取，钱", path: "/lesson-4", accent: "orange" },
+  { name: "Урок 5", description: "今天，昨天，星期，几，这，那，这儿，那儿，哪儿，回，学校，再见，对不起，没关系，天安门，北京", path: "/lesson-5", accent: "violet" },
 ];
 
 const hanyuJiaochengLessons = [

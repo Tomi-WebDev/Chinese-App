@@ -65,12 +65,38 @@ export const lesson4Vocabulary = [
   { english: "виждам", chinese: "见", pinyin: "jiàn" },
   { english: "английски език", chinese: "英语", pinyin: "yīngyǔ" },
   { english: "да, правилен", chinese: "对", pinyin: "duì" },
+  { english: "български език", chinese: "保加利亚语", pinyin: "bǎojiālìyàyǔ" },
+  { english: "арабски език", chinese: "阿拉伯语", pinyin: "ālābóyǔ" },
+  { english: "испански език", chinese: "西班牙语", pinyin: "xībānyáyǔ" },
+  { english: "немски език", chinese: "德语", pinyin: "déyǔ" },
+  { english: "корейски език", chinese: "韩国语", pinyin: "hánguóyǔ" },
+  { english: "японски език", chinese: "日语", pinyin: "rìyǔ" },
+  { english: "италиански език", chinese: "意大利语", pinyin: "yìdàlìyǔ" },
   { english: "поща", chinese: "邮局", pinyin: "yóujú" },
   { english: "изпращам (писмо)", chinese: "寄", pinyin: "jì" },
   { english: "писмо", chinese: "信", pinyin: "xìn" },
   { english: "банка", chinese: "银行", pinyin: "yínháng" },
   { english: "тегля (пари)", chinese: "取", pinyin: "qǔ" },
   { english: "пари", chinese: "钱", pinyin: "qián" },
+];
+
+export const lesson5Vocabulary = [
+  { english: "днес", chinese: "今天", pinyin: "jīntiān" },
+  { english: "вчера", chinese: "昨天", pinyin: "zuótiān" },
+  { english: "седмица", chinese: "星期", pinyin: "xīngqī" },
+  { english: "колко, няколко", chinese: "几", pinyin: "jǐ" },
+  { english: "този", chinese: "这", pinyin: "zhè" },
+  { english: "онзи", chinese: "那", pinyin: "nà" },
+  { english: "тук", chinese: "这儿", pinyin: "zhèr" },
+  { english: "там", chinese: "那儿", pinyin: "nàr" },
+  { english: "къде", chinese: "哪儿", pinyin: "nǎr" },
+  { english: "връщам се", chinese: "回", pinyin: "huí" },
+  { english: "училище", chinese: "学校", pinyin: "xuéxiào" },
+  { english: "довиждане", chinese: "再见", pinyin: "zàijiàn" },
+  { english: "извинете", chinese: "对不起", pinyin: "duìbuqǐ" },
+  { english: "няма проблем", chinese: "没关系", pinyin: "méi guānxi" },
+  { english: "Тиенанмън", chinese: "天安门", pinyin: "tiān'ānmén" },
+  { english: "Пекин", chinese: "北京", pinyin: "Běijīng" },
 ];
 
 export const hanyuJiaochengLesson1Vocabulary = [

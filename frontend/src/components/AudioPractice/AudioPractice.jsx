@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './AudioPractice.css';
 import audio from "../../assets/icons/audio.svg";
+import search from "../../assets/icons/search.svg";
 import sentence1 from "../../assets/audio/sentences/sentence1.mp3";
 import sentence2 from "../../assets/audio/sentences/sentence2.mp3";
 import sentence3 from "../../assets/audio/sentences/sentence3.mp3";
@@ -35,6 +36,7 @@ import sentence30 from "../../assets/audio/sentences/sentence30.mp3";
 const AudioPractice = ({ englishSentenceList, hanziSentenceList, pinyinSentenceList, selectedIndex }) => {
 
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [pageInput, setPageInput] = useState('1');
     const [userAnswer, setUserAnswer] = useState('');
     const [userAnswerHanzi, setUserAnswerHanzi] = useState('');
     const [userAnswerPinyin, setUserAnswerPinyin] = useState('');
@@ -42,8 +44,26 @@ const AudioPractice = ({ englishSentenceList, hanziSentenceList, pinyinSentenceL
     const [isHanziCorrect, setIsHanziCorrect] = useState(null);
     const [isPinyinCorrect, setIsPinyinCorrect] = useState(null);
 
+    const totalSentences = englishSentenceList.length;
+    const resetAnswerState = () => {
+      setUserAnswer('');
+      setUserAnswerHanzi('');
+      setUserAnswerPinyin('');
+      setIsCorrect(null);
+      setIsHanziCorrect(null);
+      setIsPinyinCorrect(null);
+    };
+
+    const goToSentence = (targetIndex) => {
+      const nextIndex = Math.min(Math.max(targetIndex, 0), totalSentences - 1);
+      setCurrentIndex(nextIndex);
+      setPageInput(String(nextIndex + 1));
+      resetAnswerState();
+    };
+
     useEffect(() => {
-      setCurrentIndex(selectedIndex)
+      setCurrentIndex(selectedIndex ?? 0);
+      setPageInput(String((selectedIndex ?? 0) + 1));
     }, [selectedIndex])
 
   const audioList = [
@@ -167,23 +187,19 @@ const AudioPractice = ({ englishSentenceList, hanziSentenceList, pinyinSentenceL
 // };
 
 const handlePrevious = () => {
-    setCurrentIndex((prevIndex) => Math.max(0, prevIndex - 1));
-    setUserAnswer('');
-    setUserAnswerHanzi('');
-    setUserAnswerPinyin('');
-    setIsCorrect(null);
-    setIsHanziCorrect(null);
-    setIsPinyinCorrect(null);
+    goToSentence(currentIndex - 1);
   };
 
   const handleNext = () => {
-    setCurrentIndex((prevIndex) => Math.min(englishSentenceList.length - 1, prevIndex + 1));
-    setUserAnswer('');
-    setUserAnswerHanzi('');
-    setUserAnswerPinyin('');
-    setIsCorrect(null);
-    setIsHanziCorrect(null);
-    setIsPinyinCorrect(null);
+    goToSentence(currentIndex + 1);
+  };
+
+  const handleSearchSentence = () => {
+    const parsedIndex = Number(pageInput);
+
+    if (!Number.isNaN(parsedIndex)) {
+      goToSentence(parsedIndex - 1);
+    }
   };
 
 //   useEffect(() => {
@@ -193,8 +209,25 @@ const handlePrevious = () => {
 
   return (
     <div className="audio_practice_container">
+        <div className="audio_practice_counter">
+          <input
+            className="counter_input"
+            type="number"
+            min="1"
+            max={totalSentences}
+            value={pageInput}
+            onChange={(e) => setPageInput(e.target.value)}
+            aria-label="Current sentence number"
+          />
+          <span className="counter_separator">/</span>
+          <span className="counter_total">{totalSentences}</span>
+          <button type="button" className="counter_search_button" onClick={handleSearchSentence} aria-label="Go to sentence">
+            <img src={search} alt="Search sentence" />
+          </button>
+        </div>
         <img src={audio} alt="audio" onClick={() => playAudio(currentIndex)}/>
         <input
+          className="audio_practice_input"
           type="text"
           value={userAnswer}
           onChange={(e) => setUserAnswer(e.target.value)}
@@ -207,6 +240,7 @@ const handlePrevious = () => {
             : <div id='incorrect'><p className="answer" style={{ color: 'green' }}>{englishSentenceList[currentIndex]}</p><p className="answer" style={{ color: 'red' }}>{userAnswer}</p></div>
         }
         <input
+          className="audio_practice_input"
           type="text"
           value={userAnswerHanzi}
           onChange={(e) => setUserAnswerHanzi(e.target.value)}
@@ -219,6 +253,7 @@ const handlePrevious = () => {
             : <div id='incorrect'><p className="answer" style={{ color: 'green' }}>{hanziSentenceList[currentIndex]}</p><p className="answer" style={{ color: 'red' }}>{userAnswerHanzi}</p></div>
         }
         <input
+          className="audio_practice_input"
           type="text"
           value={userAnswerPinyin}
           onChange={(e) => setUserAnswerPinyin(e.target.value)}
