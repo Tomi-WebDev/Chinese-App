@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import "./Italian.css";
 
@@ -13,6 +13,69 @@ import Sudoku1 from "../../components/Sudoku/Sudoku1";
 import PickHanzi from "../../components/PickHanzi/PickHanzi";
 import Dialoog from "../../components/Dialoog/Dialoog";
 
+const HSK1Vocabulary = [
+  ["爱", "to love; to like; affection", "ài"], ["八", "eight", "bā"], ["爸爸", "father; dad", "bàba"], ["吧", "suggestion particle", "ba"], ["白天", "daytime; during the day; day", "báitiān"],
+  ["百", "hundred", "bǎi"], ["半", "half", "bàn"], ["包子", "bao", "bāozi"], ["杯子", "cup; glass", "bēizi"], ["本", "measure word for books", "běn"],
+  ["边", "side; edge; margin", "biān"], ["病", "illness; disease; to fall ill", "bìng"], ["不", "no; not so; not", "bù"], ["不客气", "you're welcome", "búkèqi"], ["不要", "don't; must not", "búyào"],
+  ["菜", "dish; vegetable; cuisine", "cài"], ["茶", "tea; tea plant", "chá"], ["唱", "to sing; to call loudly; to chant", "chàng"], ["超市", "supermarket", "chāoshì"], ["车", "car; vehicle", "chē"],
+  ["吃", "to eat; to consume; to eat at", "chī"], ["出租车", "taxi; rental car", "chūzūchē"], ["穿", "to wear; to put on; to dress", "chuān"], ["打电话", "to make a phone call", "dǎdiànhuà"], ["大", "big; large; great", "dà"],
+  ["大家", "everyone", "dàjiā"], ["大学", "college; university", "dàxué"], ["大学生", "university student; college student", "dàxuéshēng"], ["到", "to reach; to arrive; to leave for", "dào"], ["的", "linking particle", "de"],
+  ["第", "prefix for ordinal numbers", "dì"], ["弟弟", "younger brother", "dìdi"], ["点", "o'clock; point", "diǎn"], ["店", "inn; old-style hotel; shop", "diàn"], ["电话", "telephone; phone call; phone number", "diànhuà"],
+  ["电脑", "computer", "diànnǎo"], ["电视", "television; TV", "diànshì"], ["电影", "movie; film", "diànyǐng"], ["电影院", "cinema; movie theater", "diànyǐngyuàn"], ["东西", "thing; stuff; person", "dōngxi"],
+  ["都", "all; both; entirely", "dōu"], ["读", "to read out; to read aloud; to read", "dú"], ["读书", "to read a book; to study; to attend school", "dúshū"], ["对", "correct; toward", "duì"], ["对不起", "I'm sorry; excuse me", "duìbuqǐ"],
+  ["多", "many; much; too many", "duō"], ["多少", "how many; how much", "duōshao"], ["儿子", "son", "érzi"], ["二", "two; 2", "èr"], ["饭", "cooked rice; meal; fan", "fàn"],
+  ["饭店", "restaurant; hotel", "fàndiàn"], ["房间", "room", "fángjiān"], ["非常", "very; really; unusual", "fēicháng"], ["飞机", "airplane", "fēijī"], ["分", "minute; point", "fēn"],
+  ["分钟", "minute", "fēnzhōng"], ["高兴", "happy; glad; willing", "gāoxìng"], ["歌", "song; to sing", "gē"], ["哥哥", "older brother", "gēge"], ["个", "general measure word", "gè"],
+  ["给", "to give; to", "gěi"], ["公司", "company; firm; corporation", "gōngsī"], ["工作", "to work; to operate; job", "gōngzuò"], ["狗", "dog", "gǒu"], ["贵", "expensive; noble; precious", "guì"],
+  ["国", "country", "guó"], ["还", "to return; to give back", "hái"], ["孩子", "child", "háizi"], ["汉语", "Chinese language", "Hànyǔ"], ["汉字", "Chinese character", "Hànzì"],
+  ["好", "good; appropriate; proper", "hǎo"], ["好吃", "tasty; delicious", "hǎochī"], ["好看", "good-looking; nice", "hǎokàn"], ["好听", "pleasant to hear", "hǎotīng"], ["好玩儿", "fun; interesting", "hǎowánr"],
+  ["号", "number; day of the month", "hào"], ["喝", "to shout", "hē"], ["和", "and; with", "hé"], ["很", "quite; very; awfully", "hěn"], ["后", "empress; queen; monarch", "hòu"],
+  ["回", "measure word for acts of a play", "huí"], ["会", "can; to know how to", "huì"], ["火车", "train", "huǒchē"], ["鸡蛋", "egg; hen's egg", "jīdàn"], ["几", "how much; how many; several", "jǐ"],
+  ["家", "family; home; measure word for households or businesses", "jiā"], ["家人", "family member; servant", "jiārén"], ["见", "to see; to meet; to appear", "jiàn"], ["件", "measure word for things; items of clothing", "jiàn"], ["饺子", "dumpling; pot-sticker", "jiǎozi"],
+  ["叫", "to shout; to call; to order", "jiào"], ["姐姐", "older sister", "jiějie"], ["今年", "this year", "jīnnián"], ["今天", "today; at the present; now", "jīntiān"], ["九", "nine; 9", "jiǔ"],
+  ["觉得", "to think; to feel", "juéde"], ["开", "to open; to start", "kāi"], ["开车", "to drive a car", "kāichē"], ["看", "to see; to look at; to read", "kàn"], ["看病", "to visit a doctor; to see a patient", "kànbìng"],
+  ["看见", "to see; to catch sight of", "kànjiàn"], ["可以", "can; may; possible", "kěyǐ"], ["课", "subject; course; class", "kè"], ["口", "mouth; measure word for people", "kǒu"], ["块", "yuan; piece", "kuài"],
+  ["来", "to come", "lái"], ["老师", "teacher", "lǎoshī"], ["了", "completed-action or change-of-state particle", "le"], ["冷", "cold", "lěng"], ["里", "lining; interior; inside", "lǐ"],
+  ["两", "two", "liǎng"], ["零", "zero; nought; zero sign", "líng"], ["六", "six; 6", "liù"], ["妈妈", "mama; mommy; mother", "māma"], ["吗", "question particle", "ma"],
+  ["买", "to buy; to purchase", "mǎi"], ["卖", "to sell", "mài"], ["忙", "busy; hurriedly; to hurry", "máng"], ["猫", "cat; modem", "māo"], ["没关系", "it's okay; never mind", "méiguānxi"],
+  ["没事", "it's okay; nothing's wrong", "méishì"], ["没有", "haven't; hasn't; doesn't exist", "méiyǒu"], ["妹妹", "younger sister; young woman", "mèimei"], ["们", "plural suffix", "men"], ["米饭", "rice", "mǐfàn"],
+  ["面包", "bread", "miànbāo"], ["面条儿", "noodles", "miàntiáor"], ["明年", "next year", "míngnián"], ["明天", "tomorrow", "míngtiān"], ["名字", "name", "míngzi"],
+  ["哪", "which", "nǎ"], ["哪个", "which one", "nǎge"], ["哪里", "where", "nǎlǐ"], ["哪儿", "where", "nǎr"], ["哪些", "which ones", "nǎxiē"],
+  ["那", "that; then", "nà"], ["那边", "there; that side", "nàbiān"], ["那个", "that one", "nàge"], ["那里", "there", "nàlǐ"], ["那儿", "there", "nàr"],
+  ["那些", "those", "nàxiē"], ["男", "male; man", "nán"], ["男朋友", "boyfriend", "nánpéngyou"], ["呢", "question/topic particle", "ne"], ["能", "can; to be able to; might possibly", "néng"],
+  ["你", "you", "nǐ"], ["你好", "hello", "nǐhǎo"], ["你们", "you (plural)", "nǐmen"], ["年", "year", "nián"], ["您", "you", "nín"],
+  ["牛奶", "cow's milk", "niúnǎi"], ["女", "female; woman; daughter", "nǚ"], ["女儿", "daughter", "nǚ'ér"], ["女朋友", "girlfriend", "nǚpéngyou"], ["女士", "lady; madam", "nǚshì"],
+  ["朋友", "friend", "péngyou"], ["便宜", "cheap; inexpensive", "piányi"], ["漂亮", "pretty; beautiful", "piàoliang"], ["苹果", "apple", "píngguǒ"], ["七", "seven; 7", "qī"],
+  ["起床", "to get out of bed; to get up", "qǐchuáng"], ["千", "thousand", "qiān"], ["前", "front; forward; ahead", "qián"], ["钱", "money", "qián"], ["请", "to ask; to invite; please", "qǐng"],
+  ["请问", "Excuse me; may I ask...?", "qǐngwèn"], ["去", "to go; to go to; last", "qù"], ["去年", "last year", "qùnián"], ["热", "to warm up; to heat up; hot", "rè"], ["人", "person; people", "rén"],
+  ["认识", "to know; to recognize; to be familiar with", "rènshi"], ["日", "day; date; sun", "rì"], ["三", "three; 3", "sān"], ["商店", "store; shop", "shāngdiàn"], ["上", "up; upper; above", "shàng"],
+  ["上班", "to go to work", "shàngbān"], ["上课", "to go to class", "shàngkè"], ["上午", "morning", "shàngwǔ"], ["上学", "to go to school; to attend school", "shàngxué"], ["少", "few; less; to lack", "shǎo"],
+  ["谁", "who", "shéi/shuí"], ["什么", "what", "shénme"], ["生病", "to fall ill", "shēngbìng"], ["十", "ten; 10", "shí"], ["时候", "time; length of time; moment", "shíhou"],
+  ["时间", "time; period", "shíjiān"], ["事", "matter; thing; item", "shì"], ["是", "to be", "shì"], ["手机", "cell phone; mobile phone", "shǒujī"], ["书", "book; letter; document", "shū"],
+  ["书店", "bookstore", "shūdiàn"], ["水", "water; river; liquid", "shuǐ"], ["水果", "fruit", "shuǐguǒ"], ["睡", "to sleep; to lie down", "shuì"], ["睡觉", "to go to bed; to sleep", "shuìjiào"],
+  ["说", "to speak; to talk; to say", "shuō"], ["说话", "to speak; to say; to talk", "shuōhuà"], ["四", "four; 4", "sì"], ["岁", "years old", "suì"], ["他", "he; him", "tā"],
+  ["它", "it", "tā"], ["她", "she; her", "tā"], ["他们", "they; them", "tāmen"], ["它们", "they; them", "tāmen"], ["她们", "they; them (female)", "tāmen"],
+  ["太", "highest; greatest; too", "tài"], ["天", "day; sky", "tiān"], ["天气", "weather", "tiānqì"], ["听", "to listen to; to hear; to heed", "tīng"], ["听见", "to hear", "tīngjiàn"],
+  ["同学", "classmate", "tóngxué"], ["外", "outside; in addition; foreign", "wài"], ["外边", "outside; outer surface; abroad", "wàibian"], ["玩", "to play; to have fun", "wán"], ["晚", "evening; night; late", "wǎn"],
+  ["晚饭", "evening meal; dinner; supper", "wǎnfàn"], ["晚上", "evening; night; in the evening", "wǎnshang"], ["喂", "hello? (on the phone)", "wèi"], ["问", "to ask; to inquire", "wèn"], ["问题", "question; problem; issue", "wèntí"],
+  ["我", "I; me", "wǒ"], ["我们", "we; us", "wǒmen"], ["五", "five; 5", "wǔ"], ["午饭", "lunch", "wǔfàn"], ["喜欢", "to like", "xǐhuan"],
+  ["下", "down; below; next", "xià"], ["下雨", "to rain", "xiàyǔ"], ["下班", "to finish work; to get off work", "xiàbān"], ["下课", "class ends; to get out of class", "xiàkè"], ["下午", "afternoon; p.m.", "xiàwǔ"],
+  ["先生", "teacher; gentleman; sir", "xiānsheng"], ["现在", "now; at present; at the moment", "xiànzài"], ["想", "to think; to think of; to devise", "xiǎng"], ["小", "small; tiny; few", "xiǎo"], ["小朋友", "child", "xiǎopéngyǒu"],
+  ["小时", "hour", "xiǎoshí"], ["小学", "elementary school; primary school", "xiǎoxué"], ["小学生", "elementary school student", "xiǎoxuéshēng"], ["些", "some; a few", "xiē"], ["写", "to write", "xiě"],
+  ["谢谢", "to thank; thanks; thank you", "xièxie"], ["新", "new; newly; meso-", "xīn"], ["星期", "week; day of the week; Sunday", "xīngqī"], ["星期日", "Sunday", "xīngqīrì"], ["星期天", "Sunday", "xīngqītiān"],
+  ["休息", "rest; to rest", "xiūxi"], ["学", "to learn; to study; to imitate", "xué"], ["学生", "student; schoolchild", "xuéshēng"], ["学习", "to learn; to study", "xuéxí"], ["学校", "school", "xuéxiào"],
+  ["雪", "snow; to wipe away", "xuě"], ["要", "to want; to need; to ask for", "yào"], ["也", "also; too", "yě"], ["一", "one; single; a", "yī"], ["衣服", "clothes", "yīfu"],
+  ["医生", "doctor", "yīshēng"], ["医院", "hospital", "yīyuàn"], ["一半", "half", "yíbàn"], ["一下", "a bit; once", "yíxià"], ["椅子", "chair", "yǐzi"],
+  ["一点儿", "a little; a bit", "yìdiǎnr"], ["一些", "some; a few", "yìxiē"], ["有", "to have; there is; having", "yǒu"], ["有的", "some", "yǒude"], ["有点儿", "slightly; a little; somewhat", "yǒudiǎnr"],
+  ["有些", "some; somewhat", "yǒuxiē"], ["雨", "rain", "yǔ"], ["元", "yuan", "yuán"], ["月", "moon; month; monthly", "yuè"], ["再", "again; once more; re-", "zài"],
+  ["在", "at; in; to be at", "zài"], ["再见", "goodbye; see you again later", "zàijiàn"], ["早", "early; morning; Good morning!", "zǎo"], ["早饭", "breakfast", "zǎofàn"], ["早上", "early morning", "zǎoshang"],
+  ["怎么", "how", "zěnme"], ["怎么样", "how; how about", "zěnmeyàng"], ["找", "to look for; to find", "zhǎo"], ["这", "this", "zhè"], ["这边", "here; this side", "zhèbiān"],
+  ["这个", "this one", "zhège"], ["这里", "here", "zhèlǐ"], ["这儿", "here", "zhèr"], ["这些", "these", "zhèxiē"], ["真", "really; truly; indeed", "zhēn"],
+  ["正在", "right now; in the middle of", "zhèngzài"], ["只", "measure word for certain animals", "zhī"], ["知道", "to know", "zhīdào"], ["中国", "China", "Zhōngguó"], ["中文", "Chinese language", "Zhōngwén"],
+  ["中午", "noon; midday", "zhōngwǔ"], ["中学", "middle school", "zhōngxué"], ["中学生", "middle-school student; high school student", "zhōngxuéshēng"], ["住", "to live; to dwell; to stay", "zhù"], ["桌子", "table; desk", "zhuōzi"],
+  ["字", "letter; symbol; character", "zì"], ["昨天", "yesterday", "zuótiān"], ["坐", "to sit; to take", "zuò"], ["做", "to make; to produce; to write", "zuò"], ["做饭", "to cook", "zuòfàn"]
+].map(([firstLang, secondLang, pinyin]) => ({ firstLang, secondLang, pinyin }));
+
 const First100Words = ({ lessonVocabulary }) => {
 
   const [searchParams] = useSearchParams();
@@ -22,6 +85,8 @@ const First100Words = ({ lessonVocabulary }) => {
   const [selectedExercise, setSelectedExercise] = useState(initialExercise);
     const [showPinyin, setShowPinyin] = useState(false);
     const [currentIndex, setCurrentIndex] = useState(0);
+  const [flashcardOrder, setFlashcardOrder] = useState([]);
+  const [reverseFlashcards, setReverseFlashcards] = useState(false);
 
     const togglePinyin = () => {
         setShowPinyin((prev) => !prev);
@@ -202,7 +267,7 @@ const First100Words = ({ lessonVocabulary }) => {
             secondLang: word.english,
             pinyin: word.pinyin,
           }))
-        : [
+        : HSK1Vocabulary /* [
             { firstLang: "爱", secondLang: "love", pinyin: "aì" },
             { firstLang: "八", secondLang: "eight", pinyin: "bā" },
             { firstLang: "爸爸", secondLang: "dad", pinyin: "bàba" },
@@ -755,8 +820,26 @@ const First100Words = ({ lessonVocabulary }) => {
         { firstLang: "坐", secondLang: "sit", pinyin: "zuò" },
         { firstLang: "坐下", secondLang: "sit down", pinyin: "zuò xià" },
         { firstLang: "做", secondLang: "do", pinyin: "zuò" },*/
-      ]);
+      );
   
+        useEffect(() => {
+          setFlashcardOrder(vocabularyList.map((_, index) => index));
+        }, [vocabularyList]);
+
+        const shuffleFlashcards = () => {
+          setFlashcardOrder((currentOrder) => {
+            const nextOrder = [...currentOrder];
+            for (let index = nextOrder.length - 1; index > 0; index -= 1) {
+              const randomIndex = Math.floor(Math.random() * (index + 1));
+              [nextOrder[index], nextOrder[randomIndex]] = [nextOrder[randomIndex], nextOrder[index]];
+            }
+            return nextOrder;
+          });
+        };
+
+        const orderedFlashcards = flashcardOrder.length
+          ? flashcardOrder.map(index => vocabularyList[index])
+          : vocabularyList;
         const pinyin = vocabularyList.map(word => word.pinyin)
         const answers = vocabularyList.map(word => word.secondLang);
         const words = vocabularyList.map(word => word.secondLang);
@@ -768,11 +851,21 @@ const First100Words = ({ lessonVocabulary }) => {
           <NavbarChinese onGameSelect={handleExerciseClick}/>
           {selectedExercise === "Test" &&  <InputList correctAnswers={answers} words={words} labelValues={labelValues} pinyin={pinyin} showPinyin={showPinyin} togglePinyin={togglePinyin}/>}
           {selectedExercise === "Flashcards" && <div className="flashcard_container">
-                    {vocabularyList.map((word, index) => (
+                    <div className="flashcard_controls" aria-label="Flashcard controls">
+                      <button className="navbar-chinese_button" type="button" onClick={shuffleFlashcards}>Shuffle</button>
+                      <button
+                        className={`navbar-chinese_button ${reverseFlashcards ? "is-selected" : ""}`}
+                        type="button"
+                        onClick={() => setReverseFlashcards((currentValue) => !currentValue)}
+                      >
+                        Reverse
+                      </button>
+                    </div>
+                    {orderedFlashcards.map((word, index) => (
                       <Flashcard
-                        key={index}
-                        german={word.firstLang}
-                        french={word.secondLang}
+                        key={`${word.firstLang}-${word.secondLang}-${index}`}
+                        german={reverseFlashcards ? word.secondLang : word.firstLang}
+                        french={reverseFlashcards ? word.firstLang : word.secondLang}
                         pinyin={word.pinyin}
                         showPinyin={showPinyin}
                       />

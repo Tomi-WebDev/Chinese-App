@@ -5,13 +5,13 @@ import "./Home.css";
 
 const exercises = [
   {
-    name: "HSK 1",
-    description: "Initials A - C as of 17.09",
+    name: "Vocabulary Test - HSK 1",
+    description: "Now complete!",
     accent: "coral",
   },
   {
-    name: "Flashcards",
-    description: "Review words at your own pace.",
+    name: "Flashcards - HSK 1",
+    description: "Review the words at your own pace.",
     accent: "blue",
   },
   {

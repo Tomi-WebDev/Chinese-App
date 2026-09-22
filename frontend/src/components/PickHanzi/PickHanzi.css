@@ -1,4 +1,4 @@
-.basket_game { width: min(100%, 980px); margin: 0 auto; padding: 170px 24px 92px; color: #17252e; }
+.basket_game { width: min(100%, 980px); margin: 0 auto; padding: 100px 24px 92px; color: #17252e; }
 .basket_header, .basket_round { display: flex; justify-content: space-between; gap: 24px; align-items: flex-end; }
 .basket_kicker { margin: 0 0 8px; color: #e86f51; font: 700 13px/1.2 "Trebuchet MS", sans-serif; letter-spacing: 2px; text-transform: uppercase; }
 .basket_header h1 { margin: 0; font: 400 clamp(46px, 8vw, 78px)/.9 Georgia, serif; }
@@ -23,5 +23,5 @@
 .basket_overlay h2 { margin: 4px 0; font: 400 36px Georgia, serif; }
 .basket_overlay p { color: #52636b; }
 .basket_restart { margin-top: 12px; padding: 11px 18px; border: 0; border-radius: 4px; background: #e86f51; color: #fff; font-weight: 700; cursor: pointer; }
-@media (max-width: 620px) { .basket_game { padding: 128px 14px 86px; } .basket_header, .basket_round { align-items: flex-start; flex-direction: column; } .basket_stats { width: 100%; justify-content: space-between; } .basket_round { margin-top: 28px; } .basket_slots { justify-content: flex-start; } .basket_field { min-height: 390px; } }
+@media (max-width: 620px) { .basket_game { padding: 60px 14px 86px; } .basket_header, .basket_round { align-items: flex-start; flex-direction: column; } .basket_stats { width: 100%; justify-content: space-between; } .basket_round { margin-top: 28px; } .basket_slots { justify-content: flex-start; } .basket_field { min-height: 390px; } }
 @media (prefers-reduced-motion: reduce) { .basket_piece { animation-duration: var(--piece-duration); } }
