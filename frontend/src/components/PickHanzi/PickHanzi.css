@@ -1,53 +1,27 @@
-.falling-hanzi {
-    position: relative;
-    overflow: hidden;
-    height: 900px;
-    width: 390px;
-    padding-top: 130px;
-}
-
-.selection_circle.hanzi {
-    position: absolute;
-    cursor: pointer;
-    left: 50px;
-    top: 130px;
-    animation: fallAnimation 10s linear;
-    /* left: calc(100% * var(--position)); 
-    --position: 0;  */
-}
-
-@keyframes fallAnimation {
-    to {
-      /* transform: translateY(100%); */
-      top: 900px;
-    }
-  }
-
-.sentence-boxes {
-    position: fixed;
-    display: flex;
-    gap: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 70px;
-}
-
-.sentence-box {
-    width: 64px;
-    height: 64px;
-    border: 2px solid black;
-    border-radius: 12px;
-    font-size: 32px;
-
-    text-align: center;
-    padding-top: 15px;
-    /* border: 0.5px solid rgba(0, 0, 0, 0.80); */
-    /* border: none; */
-    resize: none;
-    outline: none;
-    overflow: auto;
-    /* display: flex;
-    align-items: center;
-    justify-content: center; */
-    line-height: 1;
-}
+.basket_game { width: min(100%, 980px); margin: 0 auto; padding: 170px 24px 92px; color: #17252e; }
+.basket_header, .basket_round { display: flex; justify-content: space-between; gap: 24px; align-items: flex-end; }
+.basket_kicker { margin: 0 0 8px; color: #e86f51; font: 700 13px/1.2 "Trebuchet MS", sans-serif; letter-spacing: 2px; text-transform: uppercase; }
+.basket_header h1 { margin: 0; font: 400 clamp(46px, 8vw, 78px)/.9 Georgia, serif; }
+.basket_instruction { max-width: 360px; margin: 18px 0 0; color: #52636b; font-size: 16px; }
+.basket_stats { display: flex; gap: 16px; color: #52636b; font-size: 14px; white-space: nowrap; }
+.basket_stats strong { color: #17252e; font-size: 18px; letter-spacing: 2px; }
+.basket_round { align-items: center; margin: 42px 0 16px; padding: 18px 20px; border: 1px solid rgba(23, 37, 46, .12); border-left: 5px solid #e59a48; background: rgba(255,255,255,.62); }
+.basket_prompt { display: grid; gap: 4px; }
+.basket_prompt span { color: #52636b; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; }
+.basket_prompt strong { font: 400 25px Georgia, serif; }
+.basket_prompt small { color: #52636b; font-size: 13px; }
+.basket_slots { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+.basket_slot { display: grid; width: 48px; height: 48px; place-items: center; border: 1px dashed #aeb9b7; color: #aeb9b7; font: 28px Georgia, serif; }
+.basket_slot.is-filled { border-color: #4c9b75; background: #e7f3ec; color: #28704e; }
+.basket_field { position: relative; min-height: 430px; overflow: hidden; border: 1px solid rgba(23,37,46,.12); background: linear-gradient(180deg, rgba(232,243,241,.8), rgba(247,244,238,.5)); }
+.basket_field::after { position: absolute; right: 0; bottom: 0; left: 0; height: 22px; content: ""; background: #4c9b75; opacity: .72; }
+.basket_piece { position: absolute; z-index: 2; top: -64px; left: var(--piece-left); display: grid; width: 54px; height: 54px; place-items: center; border: 0; border-radius: 50%; background: #fff; color: #17252e; box-shadow: 0 8px 18px rgba(43,65,70,.16); cursor: pointer; font: 28px Georgia, serif; transform: translateX(-50%); animation: basket-fall var(--piece-duration) linear 1 forwards; animation-delay: var(--piece-delay); }
+.basket_piece:hover, .basket_piece:focus-visible { background: #e86f51; color: #fff; outline: 3px solid rgba(232,111,81,.28); outline-offset: 3px; }
+@keyframes basket-fall { to { transform: translate(-50%, 540px) rotate(20deg); } }
+.basket_visual { position: absolute; z-index: 1; bottom: 12px; left: 50%; display: grid; width: 112px; height: 62px; place-items: center; border: 5px solid #e59a48; border-top: 0; border-radius: 0 0 48px 48px; background: rgba(229,154,72,.2); color: #e59a48; font: 30px Georgia, serif; transform: translateX(-50%); }
+.basket_overlay { position: absolute; z-index: 4; inset: 0; display: grid; place-content: center; justify-items: center; background: rgba(247,244,238,.9); text-align: center; }
+.basket_overlay h2 { margin: 4px 0; font: 400 36px Georgia, serif; }
+.basket_overlay p { color: #52636b; }
+.basket_restart { margin-top: 12px; padding: 11px 18px; border: 0; border-radius: 4px; background: #e86f51; color: #fff; font-weight: 700; cursor: pointer; }
+@media (max-width: 620px) { .basket_game { padding: 128px 14px 86px; } .basket_header, .basket_round { align-items: flex-start; flex-direction: column; } .basket_stats { width: 100%; justify-content: space-between; } .basket_round { margin-top: 28px; } .basket_slots { justify-content: flex-start; } .basket_field { min-height: 390px; } }
+@media (prefers-reduced-motion: reduce) { .basket_piece { animation-duration: var(--piece-duration); } }
