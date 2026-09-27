@@ -10,7 +10,16 @@ const InputList = (props) => {
 
     const location = useLocation();
     const navigate = useNavigate();
-    const lessonRoutes = ["/lesson-1", "/lesson-2", "/lesson-3", "/lesson-4", "/lesson-5"];
+    const lessonRoutes = [
+        "/lesson-1",
+        "/lesson-2",
+        "/lesson-3",
+        "/lesson-4",
+        "/lesson-5",
+        "/lesson-6",
+        "/lesson-7",
+        "/lesson-8",
+    ];
     const currentLessonIndex = lessonRoutes.indexOf(location.pathname);
     const canGoPrevious = currentLessonIndex > 0;
     const canGoNext = currentLessonIndex >= 0 && currentLessonIndex < lessonRoutes.length - 1;

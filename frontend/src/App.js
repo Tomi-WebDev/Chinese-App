@@ -15,6 +15,9 @@ import Lesson2 from './pages/Lessons/Lesson2.jsx';
 import Lesson3 from './pages/Lessons/Lesson3.jsx';
 import Lesson4 from './pages/Lessons/Lesson4.jsx';
 import Lesson5 from './pages/Lessons/Lesson5.jsx';
+import Lesson6 from './pages/Lessons/Lesson6.jsx';
+import Lesson7 from './pages/Lessons/Lesson7.jsx';
+import Lesson8 from './pages/Lessons/Lesson8.jsx';
 import HanyuJiaochengLesson1 from './pages/Lessons/HanyuJiaochengLesson1.jsx';
 import HSK1Lesson1 from './pages/Lessons/HSK1Lesson1.jsx';
 
@@ -85,6 +88,9 @@ function App() {
           <Route path='/lesson-3' element={<Lesson3 />}/>
           <Route path='/lesson-4' element={<Lesson4 />}/>
           <Route path='/lesson-5' element={<Lesson5 />}/>
+          <Route path='/lesson-6' element={<Lesson6 />}/>
+          <Route path='/lesson-7' element={<Lesson7 />}/>
+          <Route path='/lesson-8' element={<Lesson8 />}/>
           <Route path='/hanyu-jiaocheng-lesson-1' element={<HanyuJiaochengLesson1 />}/>
           <Route path='/hsk1-lesson-1' element={<HSK1Lesson1 />}/>
           {/* <Route path='/' element={<EverydayPhrases />}/> */}

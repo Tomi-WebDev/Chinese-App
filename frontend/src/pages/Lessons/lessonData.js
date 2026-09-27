@@ -92,11 +92,54 @@ export const lesson5Vocabulary = [
   { english: "къде", chinese: "哪儿", pinyin: "nǎr" },
   { english: "връщам се", chinese: "回", pinyin: "huí" },
   { english: "училище", chinese: "学校", pinyin: "xuéxiào" },
+  { english: "ученик", chinese: "学生", pinyin: "xuéshēng" },
   { english: "довиждане", chinese: "再见", pinyin: "zàijiàn" },
   { english: "извинете", chinese: "对不起", pinyin: "duìbuqǐ" },
   { english: "няма проблем", chinese: "没关系", pinyin: "méi guānxi" },
   { english: "Тиенанмън", chinese: "天安门", pinyin: "tiān'ānmén" },
   { english: "Пекин", chinese: "北京", pinyin: "Běijīng" },
+];
+
+export const lesson6Vocabulary = [
+  { english: "работа", chinese: "工作", pinyin: "gōngzuò" },
+  { english: "здраве, тяло", chinese: "身体", pinyin: "shēntǐ" },
+  { english: "учител", chinese: "老师", pinyin: "lǎoshī" },
+  { english: "моля", chinese: "请", pinyin: "qǐng" },
+  { english: "влизам", chinese: "进", pinyin: "jìn" },
+  { english: "сядам", chinese: "坐", pinyin: "zuò" },
+  { english: "пия", chinese: "喝", pinyin: "hē" },
+  { english: "чай", chinese: "茶", pinyin: "chá" },
+  { english: "благoдаря", chinese: "谢谢", pinyin: "xièxiè" },
+  { english: "не защо", chinese: "不客气", pinyin: "bú kèqi" },
+];
+
+export const lesson7Vocabulary = [
+  { english: "Китай", chinese: "中国", pinyin: "zhōngguó" },
+  { english: "казвам се, викам", chinese: "叫", pinyin: "jìao" },
+  { english: "какво", chinese: "什么", pinyin: "shénme" },
+  { english: "име", chinese: "名字", pinyin: "míngzi" },
+  { english: "фамилия", chinese: "姓", pinyin: "xìng" },
+  { english: "уважаемо фамилно име", chinese: "贵姓", pinyin: "guìxìng" },
+  { english: "може ли да попитам", chinese: "请问", pinyin: "qǐngwèn" },
+  { english: "изучавам", chinese: "学习", pinyin: "xuéxí" },
+  { english: "познавам, запознавам се", chinese: "认识", pinyin: "rènshi" },
+  { english: "кой", chinese: "谁", pinyin: "shéi" },
+  { english: "радостен", chinese: "高兴", pinyin: "gāoxìng" },
+  { english: "висок", chinese: "高", pinyin: "gāo" },
+  { english: "скъп", chinese: "贵", pinyin: "guì" },
+  { english: "Китайски език (писмен)", chinese: "中文", pinyin: "zhōngwén" },
+  { english: "книга", chinese: "书", pinyin: "shū" },
+  { english: "на", chinese: "的", pinyin: "de" },
+];
+
+export const lesson8Vocabulary = [
+  { english: "произношение", chinese: "发音", pinyin: "fāyīn" },
+  { english: "списание", chinese: "杂志", pinyin: "zázhì" },
+  { english: "САЩ", chinese: "美国", pinyin: "měiguó" },
+  { english: "две, два", chinese: "两", pinyin: "liǎng" },
+  { english: "някои, няколко", chinese: "些", pinyin: "xiē" },
+  { english: "Джанг Донг", chinese: "张东", pinyin: "zhāng dōng" },
+  { english: "броен класификатор", chinese: "个", pinyin: "gè" },
 ];
 
 export const hanyuJiaochengLesson1Vocabulary = [

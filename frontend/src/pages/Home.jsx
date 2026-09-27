@@ -42,6 +42,9 @@ const lessons = [
   { name: "Урок 3", description: "Keep growing your vocabulary list.", path: "/lesson-3", accent: "green" },
   { name: "Урок 4", description: "俄语，法语，英语，德语，意大利语，西班牙语，保加利亚语，日语，韩国语，明天，阿拉伯语，去，见，对，邮局，寄，信，银行，取，钱", path: "/lesson-4", accent: "orange" },
   { name: "Урок 5", description: "今天，昨天，星期，几，这，那，这儿，那儿，哪儿，回，学校，再见，对不起，没关系，天安门，北京", path: "/lesson-5", accent: "violet" },
+  { name: "Урок 6", description: "Урок 6", path: "/lesson-6", accent: "coral" },
+  { name: "Урок 7", description: "Урок 7", path: "/lesson-7", accent: "blue" },
+  { name: "Урок 8", description: "Урок 8", path: "/lesson-8", accent: "green" },
 ];
 
 const hanyuJiaochengLessons = [
