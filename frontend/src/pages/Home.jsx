@@ -19,6 +19,11 @@ const exercises = [
     description: "Practice useful sentences with audio.",
     accent: "gold",
   },
+  {
+    name: "Изречения - Четене HSK1",
+    description: "6/900",
+    accent: "green",
+  },
   /*{
     name: "Phrases",
     description: "Train short phrases for everyday use.",
@@ -37,14 +42,17 @@ const exercises = [
 ];
 
 const lessons = [
-  { name: "Урок 1", description: "一，二，三，人，大，天，小，口，日，目，白，马，吗，女，妈妈，子，好", path: "/lesson-1", accent: "coral" },
-  { name: "Урок 2", description: "木，本，也，门，们，他，她，你，您，我，五，八，不，太，男", path: "/lesson-2", accent: "blue" },
-  { name: "Урок 3", description: "Keep growing your vocabulary list.", path: "/lesson-3", accent: "green" },
-  { name: "Урок 4", description: "俄语，法语，英语，德语，意大利语，西班牙语，保加利亚语，日语，韩国语，明天，阿拉伯语，去，见，对，邮局，寄，信，银行，取，钱", path: "/lesson-4", accent: "orange" },
-  { name: "Урок 5", description: "今天，昨天，星期，几，这，那，这儿，那儿，哪儿，回，学校，再见，对不起，没关系，天安门，北京", path: "/lesson-5", accent: "violet" },
-  { name: "Урок 6", description: "Урок 6", path: "/lesson-6", accent: "coral" },
-  { name: "Урок 7", description: "Урок 7", path: "/lesson-7", accent: "blue" },
-  { name: "Урок 8", description: "Урок 8", path: "/lesson-8", accent: "green" },
+  { name: "Урок 1", description: "一，二，三，人，大，小，口，日，目，白，妈妈，好，女，马，天，子，吗", path: "/lesson-1", accent: "coral" },
+  { name: "Урок 2", description: "木，本，也，门，太，八，他，她，们，你，您，不，五，男，我", path: "/lesson-2", accent: "blue" },
+  { name: "Урок 3", description: "六，七，十，九，妹妹，姐姐，四，和，有，忙，很，是，汉语，学，难，弟弟，哥哥，爸爸", path: "/lesson-3", accent: "green" },
+  { name: "Урок 4", description: "俄语，去，法语，明天，见，英语，对，保加利亚语，阿拉伯语，西班牙语，德语，韩国语，日语，意大利语，邮局，寄，信，银行，取，钱", path: "/lesson-4", accent: "orange" },
+  { name: "Урок 5", description: "今天，昨天，星期，几，这，那，这儿，那儿，哪儿，回，学校，学生，再见，对不起，没关系，天安门，北京", path: "/lesson-5", accent: "violet" },
+  { name: "Урок 6", description: "工作，身体，老师，请，进，坐，喝，茶，谢谢，不客气", path: "/lesson-6", accent: "coral" },
+  { name: "Урок 7", description: "中国，叫，什么，名字，姓，贵姓，请问，学习，认识，谁，高兴，高，贵，中文，书，的", path: "/lesson-7", accent: "blue" },
+  { name: "Урок 8", description: "发音，杂志，美国，两，些，张东，个", path: "/lesson-8", accent: "green" },
+  { name: "Урок 9", description: "中午，吃，馒头，米饭，要，酒，饺子，食堂，鸡蛋，汤，啤酒，包子，面条，玛丽", path: "/lesson-9", accent: "orange" },
+  { name: "Урок 10", description: "买，卖，多少，多，少，块，元，毛，角，分，斤，公斤，水果，苹果，便宜，来，一点儿，别的，橘子，一共，给，找，怎么，吧，还", path: "/lesson-10", accent: "violet" },
+  { name: "Урок 11", description: "下午，上午，图书馆，换，小姐，营业员，人民币，一百，一千，一万，美元，日元，欧元，韩元，等，一会儿，先生，数", path: "/lesson-11", accent: "gold" },
 ];
 
 const hanyuJiaochengLessons = [

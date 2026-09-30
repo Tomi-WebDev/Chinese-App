@@ -26,6 +26,13 @@ const NavbarChinese = ({ onGameSelect }) => {
             >
                 Flashcards
             </button>
+            <button
+                className={`navbar-chinese_button ${selectedGame === "Изречения - Четене HSK1" ? "is-selected" : ""}`}
+                type="button"
+                onClick={() => handleGameClick("Изречения - Четене HSK1")}
+            >
+                Изречения - Четене HSK1
+            </button>
         </nav>
     );
 };

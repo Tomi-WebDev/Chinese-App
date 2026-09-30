@@ -1,0 +1,85 @@
+.reading_sentences {
+    width: min(760px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 104px 0 88px;
+    color: #17252e;
+}
+
+.reading_sentences h1 {
+    margin: 0 0 20px;
+    font-size: 24px;
+    line-height: 1.25;
+}
+
+.reading_sentence_list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.reading_sentence {
+    padding: 20px 0;
+    border-top: 1px solid rgba(23, 37, 46, 0.16);
+}
+
+.reading_sentence_chinese {
+    margin: 0;
+    font-size: 28px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+.reading_sentence_pinyin {
+    margin: 4px 0 0;
+    color: #2a7b92;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.reading_sentence_translation {
+    margin: 0;
+    color: #52616a;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.reading_sentence_translation_wrap {
+    position: relative;
+    margin-top: 8px;
+}
+
+.reading_translation_cover {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    padding: 0 10px;
+    border: 0;
+    border-radius: 3px;
+    background: #d9e8eb;
+    color: #234c58;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+    transition: background 140ms ease, color 140ms ease;
+}
+
+.reading_translation_cover:hover,
+.reading_translation_cover:focus-visible {
+    background: #c9e0e5;
+}
+
+.reading_translation_cover:focus-visible {
+    outline: 2px solid #2a7b92;
+    outline-offset: 2px;
+}
+
+.reading_translation_cover.is-revealed {
+    background: transparent;
+    color: transparent;
+}
+
+@media (max-width: 480px) {
+    .reading_sentence_chinese {
+        font-size: 24px;
+    }
+}

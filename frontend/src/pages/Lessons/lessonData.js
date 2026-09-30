@@ -142,6 +142,72 @@ export const lesson8Vocabulary = [
   { english: "броен класификатор", chinese: "个", pinyin: "gè" },
 ];
 
+export const lesson9Vocabulary = [
+  { english: "обед", chinese: "中午", pinyin: "zhōngwǔ" },
+  { english: "ям", chinese: "吃", pinyin: "chī" },
+  { english: "мантоу", chinese: "馒头", pinyin: "mántou" },
+  { english: "ориз (сготвен)", chinese: "米饭", pinyin: "mǐfàn" },
+  { english: "искам, трябва", chinese: "要", pinyin: "yào" },
+  { english: "алкохол", chinese: "酒", pinyin: "jiǔ" },
+  { english: "пелмени", chinese: "饺子", pinyin: "jiǎozi" },
+  { english: "столова", chinese: "食堂", pinyin: "shítáng" },
+  { english: "яйце", chinese: "鸡蛋", pinyin: "jīdàn" },
+  { english: "супа", chinese: "汤", pinyin: "tāng" },
+  { english: "бира", chinese: "啤酒", pinyin: "píjiǔ" },
+  { english: "баодзъ", chinese: "包子", pinyin: "bāozi" },
+  { english: "нудли", chinese: "面条", pinyin: "miàntiáo" },
+  { english: "Мери", chinese: "玛丽", pinyin: "mǎlì" },
+];
+
+export const lesson10Vocabulary = [
+  { english: "купувам", chinese: "买", pinyin: "mǎi" },
+  { english: "продавам", chinese: "卖", pinyin: "mài" },
+  { english: "колко", chinese: "多少", pinyin: "duōshao" },
+  { english: "много", chinese: "多", pinyin: "duō" },
+  { english: "малко", chinese: "少", pinyin: "shǎo" },
+  { english: "юан (разговорно)", chinese: "块", pinyin: "kuài" },
+  { english: "юан", chinese: "元", pinyin: "yuán" },
+  { english: "1/10 юан (разговорно)", chinese: "毛", pinyin: "máo" },
+  { english: "1/10 юан", chinese: "角", pinyin: "jiǎo" },
+  { english: "1/100 юан", chinese: "分", pinyin: "fēn" },
+  { english: "половин килограм", chinese: "斤", pinyin: "jīn" },
+  { english: "килограм", chinese: "公斤", pinyin: "gōngjīn" },
+  { english: "плодове", chinese: "水果", pinyin: "shuǐguǒ" },
+  { english: "ябълка", chinese: "苹果", pinyin: "píngguǒ" },
+  { english: "евтин", chinese: "便宜", pinyin: "piányi" },
+  { english: "връщам се, давам", chinese: "来", pinyin: "lái" },
+  { english: "малко", chinese: "一点儿", pinyin: "yì diǎnr" },
+  { english: "друг", chinese: "别的", pinyin: "bié de" },
+  { english: "мандарина", chinese: "橘子", pinyin: "júzi" },
+  { english: "общо", chinese: "一共", pinyin: "yígòng" },
+  { english: "давам", chinese: "给", pinyin: "gěi" },
+  { english: "връщам", chinese: "找", pinyin: "zhǎo" },
+  { english: "как, защо", chinese: "怎么", pinyin: "zěnme" },
+  { english: "частица за предложение", chinese: "吧", pinyin: "ba" },
+  { english: "още", chinese: "还", pinyin: "hái" },
+];
+
+export const lesson11Vocabulary = [
+  { english: "следобед", chinese: "下午", pinyin: "xiàwǔ" },
+  { english: "сутрин", chinese: "上午", pinyin: "shàngwǔ" },
+  { english: "библиотека", chinese: "图书馆", pinyin: "túshūguǎn" },
+  { english: "обменям, сменям", chinese: "换", pinyin: "huàn" },
+  { english: "госпожица", chinese: "小姐", pinyin: "xiǎojiě" },
+  { english: "служител, продавач", chinese: "营业员", pinyin: "yíngyèyuán" },
+  { english: "ренминби", chinese: "人民币", pinyin: "rénmínbì" },
+  { english: "сто", chinese: "一百", pinyin: "yì bǎi" },
+  { english: "хиляда", chinese: "一千", pinyin: "yì qiān" },
+  { english: "десет хиляди", chinese: "一万", pinyin: "yí wàn" },
+  { english: "долар", chinese: "美元", pinyin: "měiyuán" },
+  { english: "йен", chinese: "日元", pinyin: "rìyuán" },
+  { english: "евро", chinese: "欧元", pinyin: "ōuyuán" },
+  { english: "вон", chinese: "韩元", pinyin: "hányuán" },
+  { english: "чакам", chinese: "等", pinyin: "děng" },
+  { english: "малко (време)", chinese: "一会儿", pinyin: "yí huìr" },
+  { english: "господин", chinese: "先生", pinyin: "xiānsheng" },
+  { english: "броя", chinese: "数", pinyin: "shǔ" },
+];
+
 export const hanyuJiaochengLesson1Vocabulary = [
 ];
 

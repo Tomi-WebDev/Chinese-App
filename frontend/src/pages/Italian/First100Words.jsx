@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import "./Italian.css";
 
@@ -12,6 +12,7 @@ import AudioPractice2 from "../../components/AudioPractice2/AudioPractice2";
 import Sudoku1 from "../../components/Sudoku/Sudoku1";
 import PickHanzi from "../../components/PickHanzi/PickHanzi";
 import Dialoog from "../../components/Dialoog/Dialoog";
+import ReadingSentences from "../../components/ReadingSentences/ReadingSentences";
 
 const HSK1Vocabulary = [
   ["爱", "to love; to like; affection", "ài"], ["八", "eight", "bā"], ["爸爸", "father; dad", "bàba"], ["吧", "suggestion particle", "ba"], ["白天", "daytime; during the day; day", "báitiān"],
@@ -80,7 +81,7 @@ const First100Words = ({ lessonVocabulary }) => {
 
   const [searchParams] = useSearchParams();
   const exerciseFromUrl = searchParams.get("exercise");
-  const availableExercises = ["Test", "Flashcards", "Sentences", "Phrases", "Sudoku", "Basket"];
+  const availableExercises = ["Test", "Flashcards", "Sentences", "Изречения - Четене HSK1", "Phrases", "Sudoku", "Basket"];
   const initialExercise = availableExercises.includes(exerciseFromUrl) ? exerciseFromUrl : "Test";
   const [selectedExercise, setSelectedExercise] = useState(initialExercise);
     const [showPinyin, setShowPinyin] = useState(false);
@@ -840,10 +841,10 @@ const First100Words = ({ lessonVocabulary }) => {
         const orderedFlashcards = flashcardOrder.length
           ? flashcardOrder.map(index => vocabularyList[index])
           : vocabularyList;
-        const pinyin = vocabularyList.map(word => word.pinyin)
-        const answers = vocabularyList.map(word => word.secondLang);
+        const pinyin = useMemo(() => vocabularyList.map(word => word.pinyin), [vocabularyList]);
+        const answers = useMemo(() => vocabularyList.map(word => word.secondLang), [vocabularyList]);
         const words = vocabularyList.map(word => word.secondLang);
-        const labelValues = vocabularyList.map(word => word.firstLang);
+        const labelValues = useMemo(() => vocabularyList.map(word => word.firstLang), [vocabularyList]);
         shuffleArray(words);
 
     return (
@@ -872,6 +873,7 @@ const First100Words = ({ lessonVocabulary }) => {
                     ))}
                   </div>}
           {selectedExercise === "Sentences" && <AudioPractice shuffleArray={shuffleArray} englishSentenceList={sentenceList} hanziSentenceList={chineseSentenceList} pinyinSentenceList={pinyinSentenceList} onSearch={handleSearch} selectedIndex={currentIndex}/>}
+          {selectedExercise === "Изречения - Четене HSK1" && <ReadingSentences showPinyin={showPinyin} />}
           {selectedExercise === "Phrases" && <AudioPractice2 shuffleArray={shuffleArray} englishSentenceList={englishPhraseList} hanziSentenceList={hanziPhraseList} pinyinSentenceList={pinyinPhraseList} onSearch={handleSearch} selectedIndex={currentIndex}/>}
           {selectedExercise === "Sudoku" && <Sudoku1/>}
           {selectedExercise === "Basket" && <PickHanzi/>}

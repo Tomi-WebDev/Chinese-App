@@ -21,6 +21,7 @@
 .navbar-chinese_button {
     flex: 1;
     min-height: 40px;
+    min-width: 0;
     padding: 8px 16px;
     border: 0;
     border-radius: 4px;
@@ -29,6 +30,8 @@
     font-family: "Trebuchet MS", sans-serif;
     font-size: 15px;
     font-weight: 700;
+    line-height: 1.2;
+    overflow-wrap: anywhere;
     cursor: pointer;
     transition: transform 180ms ease, background 180ms ease;
 }
