@@ -10,6 +10,7 @@ const InputList = (props) => {
 
     const location = useLocation();
     const navigate = useNavigate();
+    const { correctAnswers, labelValues, pinyin, footerCheckActionRef, onFooterCheckStateChange } = props;
     const lessonRoutes = [
         "/lesson-1",
         "/lesson-2",
@@ -54,7 +55,7 @@ const InputList = (props) => {
 
     const handleCheck = async (event) => {
 
-        event.preventDefault();     
+        event?.preventDefault();
         const newScore = answers.map((answer, index) => answer.toLowerCase() === visibleAnswers[index].toLowerCase());
         setScore(newScore);
         console.log(newScore);
@@ -105,11 +106,25 @@ const InputList = (props) => {
     };
 
     useEffect(() => {
-        setShuffledIndices(Array.from({ length: props.correctAnswers.length }, (_, index) => index));
-        setAnswers(Array(props.correctAnswers.length).fill(""));
+        setShuffledIndices(Array.from({ length: correctAnswers.length }, (_, index) => index));
+        setAnswers(Array(correctAnswers.length).fill(""));
         setScore(null);
         setCheck(false);
-    }, [props.labelValues, props.correctAnswers, props.pinyin]);
+    }, [labelValues, correctAnswers, pinyin]);
+
+    useEffect(() => {
+        onFooterCheckStateChange?.(check);
+    }, [check, onFooterCheckStateChange]);
+
+    useEffect(() => () => {
+        onFooterCheckStateChange?.(null);
+        if (footerCheckActionRef) footerCheckActionRef.current = null;
+    }, [footerCheckActionRef, onFooterCheckStateChange]);
+
+    useEffect(() => {
+        if (!footerCheckActionRef) return;
+        footerCheckActionRef.current = { handleCheck, handleStartOver };
+    });
 
     useEffect(() => {
         if (isCompleted) {

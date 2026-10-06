@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import "./Italian.css";
 
@@ -87,6 +87,8 @@ const First100Words = ({ lessonVocabulary }) => {
   const isHskExercisePage = location.pathname === "/italian";
   const initialExercise = availableExercises.includes(exerciseFromUrl) ? exerciseFromUrl : "Test";
   const [selectedExercise, setSelectedExercise] = useState(initialExercise);
+  const footerCheckActionRef = useRef(null);
+  const [footerCheckState, setFooterCheckState] = useState(null);
     const [showPinyin, setShowPinyin] = useState(false);
     const [currentIndex, setCurrentIndex] = useState(0);
   const [flashcardOrder, setFlashcardOrder] = useState([]);
@@ -864,7 +866,7 @@ const First100Words = ({ lessonVocabulary }) => {
     return (
         <div className="parent_container_app">
           <NavbarChinese isHskExercisePage={isHskExercisePage} onGameSelect={handleExerciseClick}/>
-          {selectedExercise === "Test" &&  <InputList correctAnswers={answers} words={words} labelValues={labelValues} pinyin={pinyin} showPinyin={showPinyin} togglePinyin={togglePinyin}/>}
+          {selectedExercise === "Test" &&  <InputList correctAnswers={answers} words={words} labelValues={labelValues} pinyin={pinyin} showPinyin={showPinyin} togglePinyin={togglePinyin} footerCheckActionRef={footerCheckActionRef} onFooterCheckStateChange={setFooterCheckState}/>}
           {selectedExercise === "Flashcards" && <div className="flashcard_container">
                     <div className="flashcard_controls" aria-label="Flashcard controls">
                       <div className="flashcard_nav_controls">
@@ -898,7 +900,16 @@ const First100Words = ({ lessonVocabulary }) => {
           {selectedExercise === "Sudoku" && <Sudoku1/>}
           {selectedExercise === "Basket" && <PickHanzi/>}
           {/* {selectedExercise === "Dialoog" && <Dialoog />} */}
-          <FooterChinese showPinyin={showPinyin} togglePinyin={togglePinyin}/>
+          <FooterChinese
+            showPinyin={showPinyin}
+            togglePinyin={togglePinyin}
+            checkState={footerCheckState}
+            onCheckClick={() => {
+              const action = footerCheckActionRef.current;
+              if (footerCheckState) action?.handleStartOver();
+              else action?.handleCheck();
+            }}
+          />
         </div>
     )
 }

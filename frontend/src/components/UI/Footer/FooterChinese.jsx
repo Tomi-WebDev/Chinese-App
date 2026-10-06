@@ -6,9 +6,18 @@ import home from "../../../assets/icons/home.svg";
 
 import "./FooterChinese.css";
 
-const FooterChinese = ({ showPinyin, togglePinyin }) => {
+const FooterChinese = ({ showPinyin, togglePinyin, checkState, onCheckClick }) => {
     return (
         <footer className="footer-chinese">
+            {checkState !== null && checkState !== undefined && (
+                <button
+                    className="footer-chinese_action"
+                    type="button"
+                    onClick={onCheckClick}
+                >
+                    {checkState ? "Start Over" : "Check"}
+                </button>
+            )}
             <button
                 className={`footer-chinese_button ${showPinyin ? "is-active" : ""}`}
                 type="button"
