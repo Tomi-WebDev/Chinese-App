@@ -45,62 +45,16 @@ function ScrollToTop() {
   return null;
 }
 
-function KeepFooterBehindKeyboard() {
+function KeepKeyboardOverContent() {
   useEffect(() => {
-    const viewport = window.visualViewport;
-    const getLayoutHeight = () => document.documentElement.clientHeight || window.innerHeight;
-    let layoutHeight = getLayoutHeight();
-    let textEntryFocused = false;
+    const virtualKeyboard = navigator.virtualKeyboard;
+    if (!virtualKeyboard) return undefined;
 
-    const isTextEntry = (element) => {
-      if (!(element instanceof HTMLElement)) return false;
-      if (element.isContentEditable || element.matches("textarea")) return true;
-      if (!element.matches("input")) return false;
-      return !["button", "checkbox", "color", "file", "hidden", "image", "radio", "reset", "submit"].includes(element.type);
-    };
-
-    const updateFooterOffset = () => {
-      const viewportBottom = viewport ? viewport.offsetTop + viewport.height : window.innerHeight;
-      const offset = textEntryFocused ? Math.max(0, layoutHeight - viewportBottom) : 0;
-      document.documentElement.style.setProperty("--footer-keyboard-offset", `${offset}px`);
-    };
-
-    const handleFocusIn = (event) => {
-      if (!isTextEntry(event.target)) return;
-      layoutHeight = getLayoutHeight();
-      textEntryFocused = true;
-      document.body.classList.add("keyboard-open");
-      updateFooterOffset();
-    };
-
-    const handleFocusOut = () => {
-      window.requestAnimationFrame(() => {
-        if (isTextEntry(document.activeElement)) return;
-        textEntryFocused = false;
-        document.body.classList.remove("keyboard-open");
-        updateFooterOffset();
-      });
-    };
-
-    const handleWindowResize = () => {
-      if (!textEntryFocused) layoutHeight = getLayoutHeight();
-      updateFooterOffset();
-    };
-
-    document.addEventListener("focusin", handleFocusIn);
-    document.addEventListener("focusout", handleFocusOut);
-    window.addEventListener("resize", handleWindowResize);
-    viewport?.addEventListener("resize", updateFooterOffset);
-    viewport?.addEventListener("scroll", updateFooterOffset);
+    const previousOverlaySetting = virtualKeyboard.overlaysContent;
+    virtualKeyboard.overlaysContent = true;
 
     return () => {
-      document.removeEventListener("focusin", handleFocusIn);
-      document.removeEventListener("focusout", handleFocusOut);
-      window.removeEventListener("resize", handleWindowResize);
-      viewport?.removeEventListener("resize", updateFooterOffset);
-      viewport?.removeEventListener("scroll", updateFooterOffset);
-      document.body.classList.remove("keyboard-open");
-      document.documentElement.style.removeProperty("--footer-keyboard-offset");
+      virtualKeyboard.overlaysContent = previousOverlaySetting;
     };
   }, []);
 
@@ -145,7 +99,7 @@ function App() {
     <div className="App">
       <Router>
         <ScrollToTop />
-        <KeepFooterBehindKeyboard />
+        <KeepKeyboardOverContent />
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />

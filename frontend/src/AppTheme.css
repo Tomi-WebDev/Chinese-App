@@ -285,11 +285,6 @@ input.default {
   backdrop-filter: blur(8px);
 }
 
-body.keyboard-open .footer,
-body.keyboard-open .footer-chinese {
-  bottom: calc(0px - var(--footer-keyboard-offset, 0px));
-}
-
 .footer img {
   width: 30px;
   height: 30px;

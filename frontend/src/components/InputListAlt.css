@@ -77,6 +77,20 @@
     box-shadow: 0 12px 24px rgba(20, 30, 38, 0.12);
 }
 
+@media (max-width: 720px) {
+    .input_list {
+        margin-bottom: 250px;
+    }
+
+    .lesson_action_stack {
+        position: fixed;
+        bottom: calc(70px + env(safe-area-inset-bottom, 0px));
+        left: 50%;
+        margin: 0;
+        transform: translateX(-50%);
+    }
+}
+
 .lesson_nav_controls {
     display: flex;
     align-items: center;
