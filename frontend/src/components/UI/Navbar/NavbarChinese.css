@@ -54,17 +54,14 @@
 @media (max-width: 480px) {
     .navbar-chinese {
         gap: 8px;
+        flex-wrap: wrap;
     }
 
     .navbar-chinese_button {
+        box-sizing: border-box;
+        flex: 1 1 calc(50% - 4px);
         padding: 8px 10px;
         font-size: 14px;
-    }
-}
-
-@media (max-width: 390px) {
-    .navbar-chinese {
-        /*flex-direction: column;*/
     }
 }
 

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./NavbarChinese.css";
 
-const NavbarChinese = ({ onGameSelect }) => {
+const NavbarChinese = ({ onGameSelect, isHskExercisePage }) => {
     const [selectedGame, setSelectedGame] = useState(null);
 
     const handleGameClick = (gameName) => {
@@ -26,13 +26,24 @@ const NavbarChinese = ({ onGameSelect }) => {
             >
                 Flashcards
             </button>
-            <button
-                className={`navbar-chinese_button ${selectedGame === "Изречения - Четене HSK1" ? "is-selected" : ""}`}
-                type="button"
-                onClick={() => handleGameClick("Изречения - Четене HSK1")}
-            >
-                Изречения - Четене HSK1
-            </button>
+            {isHskExercisePage ? (
+                <>
+                    <button
+                        className={`navbar-chinese_button ${selectedGame === "Sentences HSK - Listening" ? "is-selected" : ""}`}
+                        type="button"
+                        onClick={() => handleGameClick("Sentences HSK - Listening")}
+                    >
+                        Sentences HSK - Listening
+                    </button>
+                    <button
+                        className={`navbar-chinese_button ${selectedGame === "Изречения - Четене HSK1" ? "is-selected" : ""}`}
+                        type="button"
+                        onClick={() => handleGameClick("Изречения - Четене HSK1")}
+                    >
+                        Изречения - Четене HSK1
+                    </button>
+                </>
+            ) : null}
         </nav>
     );
 };

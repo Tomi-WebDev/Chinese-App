@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import "./Italian.css";
 
 import NavbarChinese from "../../components/UI/Navbar/NavbarChinese";
@@ -73,21 +73,35 @@ const HSK1Vocabulary = [
   ["怎么", "how", "zěnme"], ["怎么样", "how; how about", "zěnmeyàng"], ["找", "to look for; to find", "zhǎo"], ["这", "this", "zhè"], ["这边", "here; this side", "zhèbiān"],
   ["这个", "this one", "zhège"], ["这里", "here", "zhèlǐ"], ["这儿", "here", "zhèr"], ["这些", "these", "zhèxiē"], ["真", "really; truly; indeed", "zhēn"],
   ["正在", "right now; in the middle of", "zhèngzài"], ["只", "measure word for certain animals", "zhī"], ["知道", "to know", "zhīdào"], ["中国", "China", "Zhōngguó"], ["中文", "Chinese language", "Zhōngwén"],
-  ["中午", "noon; midday", "zhōngwǔ"], ["中学", "middle school", "zhōngxué"], ["中学生", "middle-school student; high school student", "zhōngxuéshēng"], ["住", "to live; to dwell; to stay", "zhù"], ["桌子", "table; desk", "zhuōzi"],
-  ["字", "letter; symbol; character", "zì"], ["昨天", "yesterday", "zuótiān"], ["坐", "to sit; to take", "zuò"], ["做", "to make; to produce; to write", "zuò"], ["做饭", "to cook", "zuòfàn"]
+  ["中午", "noon", "zhōngwǔ"], ["中学", "middle school", "zhōngxué"], ["中学生", "middle-school student; high school student", "zhōngxuéshēng"], ["住", "to live; to dwell; to stay", "zhù"], ["桌子", "table; desk", "zhuōzi"],
+  ["字", "character", "zì"], ["昨天", "yesterday", "zuótiān"], ["坐", "to sit", "zuò"], ["做", "to make", "zuò"], ["做饭", "to cook", "zuòfàn"]
 ].map(([firstLang, secondLang, pinyin]) => ({ firstLang, secondLang, pinyin }));
 
 const First100Words = ({ lessonVocabulary }) => {
 
+  const location = useLocation();
+  const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const exerciseFromUrl = searchParams.get("exercise");
-  const availableExercises = ["Test", "Flashcards", "Sentences", "Изречения - Четене HSK1", "Phrases", "Sudoku", "Basket"];
+  const availableExercises = ["Test", "Flashcards", "Sentences HSK - Listening", "Изречения", "Изречения - Четене HSK1", "Phrases", "Sudoku", "Basket"];
+  const isHskExercisePage = location.pathname === "/italian";
   const initialExercise = availableExercises.includes(exerciseFromUrl) ? exerciseFromUrl : "Test";
   const [selectedExercise, setSelectedExercise] = useState(initialExercise);
     const [showPinyin, setShowPinyin] = useState(false);
     const [currentIndex, setCurrentIndex] = useState(0);
   const [flashcardOrder, setFlashcardOrder] = useState([]);
   const [reverseFlashcards, setReverseFlashcards] = useState(false);
+  const flashcardLessonRoutes = [
+    ...Array.from({ length: 12 }, (_, index) => `/lesson-${index + 1}`),
+    "/test-1",
+  ];
+  const currentFlashcardLessonIndex = flashcardLessonRoutes.indexOf(location.pathname);
+  const canGoToPreviousFlashcardLesson = currentFlashcardLessonIndex > 0;
+  const canGoToNextFlashcardLesson = currentFlashcardLessonIndex >= 0 && currentFlashcardLessonIndex < flashcardLessonRoutes.length - 1;
+
+  const navigateFlashcardLesson = (lessonIndex) => {
+    navigate(`${flashcardLessonRoutes[lessonIndex]}?exercise=Flashcards`);
+  };
 
     const togglePinyin = () => {
         setShowPinyin((prev) => !prev);
@@ -849,18 +863,24 @@ const First100Words = ({ lessonVocabulary }) => {
 
     return (
         <div className="parent_container_app">
-          <NavbarChinese onGameSelect={handleExerciseClick}/>
+          <NavbarChinese isHskExercisePage={isHskExercisePage} onGameSelect={handleExerciseClick}/>
           {selectedExercise === "Test" &&  <InputList correctAnswers={answers} words={words} labelValues={labelValues} pinyin={pinyin} showPinyin={showPinyin} togglePinyin={togglePinyin}/>}
           {selectedExercise === "Flashcards" && <div className="flashcard_container">
                     <div className="flashcard_controls" aria-label="Flashcard controls">
-                      <button className="navbar-chinese_button" type="button" onClick={shuffleFlashcards}>Shuffle</button>
-                      <button
-                        className={`navbar-chinese_button ${reverseFlashcards ? "is-selected" : ""}`}
-                        type="button"
-                        onClick={() => setReverseFlashcards((currentValue) => !currentValue)}
-                      >
-                        Reverse
-                      </button>
+                      <div className="flashcard_nav_controls">
+                        <button className="navbar-chinese_button" type="button" onClick={() => navigateFlashcardLesson(currentFlashcardLessonIndex - 1)} disabled={!canGoToPreviousFlashcardLesson}>Previous</button>
+                        <button className="navbar-chinese_button" type="button" onClick={() => navigateFlashcardLesson(currentFlashcardLessonIndex + 1)} disabled={!canGoToNextFlashcardLesson}>Next</button>
+                      </div>
+                      <div className="flashcard_action_row">
+                        <button className="navbar-chinese_button" type="button" onClick={shuffleFlashcards}>Shuffle</button>
+                        <button
+                          className={`navbar-chinese_button ${reverseFlashcards ? "is-selected" : ""}`}
+                          type="button"
+                          onClick={() => setReverseFlashcards((currentValue) => !currentValue)}
+                        >
+                          Reverse
+                        </button>
+                      </div>
                     </div>
                     {orderedFlashcards.map((word, index) => (
                       <Flashcard
@@ -872,7 +892,7 @@ const First100Words = ({ lessonVocabulary }) => {
                       />
                     ))}
                   </div>}
-          {selectedExercise === "Sentences" && <AudioPractice shuffleArray={shuffleArray} englishSentenceList={sentenceList} hanziSentenceList={chineseSentenceList} pinyinSentenceList={pinyinSentenceList} onSearch={handleSearch} selectedIndex={currentIndex}/>}
+          {(selectedExercise === "Sentences HSK - Listening" || selectedExercise === "Изречения") && <AudioPractice shuffleArray={shuffleArray} englishSentenceList={sentenceList} hanziSentenceList={chineseSentenceList} pinyinSentenceList={pinyinSentenceList} onSearch={handleSearch} selectedIndex={currentIndex}/>}
           {selectedExercise === "Изречения - Четене HSK1" && <ReadingSentences showPinyin={showPinyin} />}
           {selectedExercise === "Phrases" && <AudioPractice2 shuffleArray={shuffleArray} englishSentenceList={englishPhraseList} hanziSentenceList={hanziPhraseList} pinyinSentenceList={pinyinPhraseList} onSearch={handleSearch} selectedIndex={currentIndex}/>}
           {selectedExercise === "Sudoku" && <Sudoku1/>}

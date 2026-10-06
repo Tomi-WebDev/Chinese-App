@@ -15,7 +15,7 @@ const exercises = [
     accent: "blue",
   },
   {
-    name: "Sentences",
+    name: "Sentences HSK - Listening",
     description: "Practice useful sentences with audio.",
     accent: "gold",
   },
@@ -53,6 +53,18 @@ const lessons = [
   { name: "Урок 9", description: "中午，吃，馒头，米饭，要，酒，饺子，食堂，鸡蛋，汤，啤酒，包子，面条，玛丽", path: "/lesson-9", accent: "orange" },
   { name: "Урок 10", description: "买，卖，多少，多，少，块，元，毛，角，分，斤，公斤，水果，苹果，便宜，来，一点儿，别的，橘子，一共，给，找，怎么，吧，还", path: "/lesson-10", accent: "violet" },
   { name: "Урок 11", description: "下午，上午，图书馆，换，小姐，营业员，人民币，一百，一千，一万，美元，日元，欧元，韩元，等，一会儿，先生，数", path: "/lesson-11", accent: "gold" },
+  { name: "Урок 12", description: "办公室，找，在，家，呢，住，号，楼，零，房间，知道，电话，电，话，号码，手机，手", path: "/lesson-12", accent: "coral" },
+  { name: "Тест 1", description: "Уроци 1 до 12", path: "/test-1", accent: "green" },
+  { name: "Изречения 1", description: "Изреченията (недовършен)", path: "/sentences-1", accent: "blue" },
+];
+
+const elonLessons = [
+  {
+    name: "Lesson 1",
+    description: "Start with the first Elon lesson.",
+    path: "/elon-lesson-1",
+    accent: "blue",
+  },
 ];
 
 const hanyuJiaochengLessons = [
@@ -75,6 +87,7 @@ const hsk1Lessons = [
 
 const lessonSections = [
   { kicker: "Уводен Курс", title: "Избери Урок", lessons },
+  { kicker: "Elon", title: "Choose an Elon lesson", lessons: elonLessons },
   { kicker: "Hanyu Jiaocheng", title: "Choose a Hanyu Jiaocheng lesson", lessons: hanyuJiaochengLessons },
   { kicker: "HSK 1", title: "Choose an HSK 1 lesson", lessons: hsk1Lessons },
 ];

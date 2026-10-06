@@ -22,6 +22,8 @@ const InputList = (props) => {
         "/lesson-9",
         "/lesson-10",
         "/lesson-11",
+        "/lesson-12",
+        "/test-1",
     ];
     const currentLessonIndex = lessonRoutes.indexOf(location.pathname);
     const canGoPrevious = currentLessonIndex > 0;
