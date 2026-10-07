@@ -1,11 +1,7 @@
-import React, { useState } from "react";
 import "./NavbarChinese.css";
 
-const NavbarChinese = ({ onGameSelect, isHskExercisePage }) => {
-    const [selectedGame, setSelectedGame] = useState(null);
-
+const NavbarChinese = ({ onGameSelect, isHskExercisePage, selectedGame }) => {
     const handleGameClick = (gameName) => {
-        setSelectedGame(gameName);
         onGameSelect(gameName);
     };
 

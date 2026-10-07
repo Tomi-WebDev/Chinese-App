@@ -865,7 +865,11 @@ const First100Words = ({ lessonVocabulary }) => {
 
     return (
         <div className="parent_container_app">
-          <NavbarChinese isHskExercisePage={isHskExercisePage} onGameSelect={handleExerciseClick}/>
+          <NavbarChinese
+            isHskExercisePage={isHskExercisePage}
+            onGameSelect={handleExerciseClick}
+            selectedGame={selectedExercise}
+          />
           {selectedExercise === "Test" &&  <InputList correctAnswers={answers} words={words} labelValues={labelValues} pinyin={pinyin} showPinyin={showPinyin} togglePinyin={togglePinyin} footerCheckActionRef={footerCheckActionRef} onFooterCheckStateChange={setFooterCheckState}/>}
           {selectedExercise === "Flashcards" && <div className="flashcard_container">
                     <div className="flashcard_controls" aria-label="Flashcard controls">

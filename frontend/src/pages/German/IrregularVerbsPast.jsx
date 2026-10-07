@@ -83,7 +83,7 @@ const IrregularVerbsfirstLang = () => {
 
     return (
         <div className="parent_container_app">
-          <Navbar onGameSelect={handleExerciseClick}/>
+          <Navbar onGameSelect={handleExerciseClick} selectedGame={selectedExercise}/>
           {selectedExercise === "Test" &&  <InputList correctAnswers={answers} words={words} labelValues={labelValues} pinyin={pinyin} showPinyin={showPinyin} togglePinyin={togglePinyin}/>}
           {selectedExercise === "Flashcards" && <div className="flashcard_container">
                     {vocabularyList.map((word, index) => (

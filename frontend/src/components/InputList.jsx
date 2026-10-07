@@ -5,6 +5,10 @@ import "./InputListAlt.css";
 
 import completedSound from "../assets/audio/mixkit-instant-win-2021.wav";
 import Congratulations from "./UI/CongratulationsPopUp/Congratulations";
+import reverseIcon from "../assets/icons/reverse.svg";
+import shuffleIcon from "../assets/icons/dice.svg";
+import arrowLeftIcon from "../assets/icons/arrow-left.svg";
+import arrowRightIcon from "../assets/icons/arrow-right.svg";
 
 const InputList = (props) => {
 
@@ -171,34 +175,78 @@ const InputList = (props) => {
                         />
                     </div>
                 ))}
-                <div className="lesson_action_stack">
-                    <div className="lesson_nav_controls">
-                        <button
-                            type="button"
-                            className="lesson_nav_button"
-                            onClick={handlePrevious}
-                            disabled={!canGoPrevious}
-                        >
-                            Previous
-                        </button>
-                        {check ? (
-                            <button onClick={handleStartOver}>Start Over</button>
-                        ) : (
-                            <button onClick={handleCheck}>Check</button>
-                        )}
-                        <button
-                            type="button"
-                            className="lesson_nav_button"
-                            onClick={handleNext}
-                            disabled={!canGoNext}
-                        >
-                            Next
-                        </button>
+                {!footerCheckActionRef && (
+                    <div className="lesson_action_stack">
+                        <div className="lesson_nav_controls">
+                            <button
+                                type="button"
+                                className="lesson_nav_button"
+                                onClick={handlePrevious}
+                                disabled={!canGoPrevious}
+                            >
+                                Previous
+                            </button>
+                            {check ? (
+                                <button onClick={handleStartOver}>Start Over</button>
+                            ) : (
+                                <button onClick={handleCheck}>Check</button>
+                            )}
+                            <button
+                                type="button"
+                                className="lesson_nav_button"
+                                onClick={handleNext}
+                                disabled={!canGoNext}
+                            >
+                                Next
+                            </button>
+                        </div>
+                        <div className="lesson_action_row">
+                            <button type="button" className="shuffle_button" onClick={handleShuffle}>Shuffle</button>
+                            <button type="button" className="reverse_button" onClick={handleReverse}>Reverse</button>
+                        </div>
                     </div>
-                    <div className="lesson_action_row">
-                        <button type="button" className="shuffle_button" onClick={handleShuffle}>Shuffle</button>
-                        <button type="button" className="reverse_button" onClick={handleReverse}>Reverse</button>
-                    </div>
+                )}
+                <div className="action_stack_left">
+                    <button
+                        type="button"
+                        className="side_action_button"
+                        onClick={handlePrevious}
+                        disabled={!canGoPrevious}
+                        aria-label="Previous lesson"
+                        title="Previous lesson"
+                    >
+                        <img src={arrowLeftIcon} alt="" aria-hidden="true" />
+                    </button>
+                    <button
+                        type="button"
+                        className="shuffle_button_left"
+                        onClick={handleShuffle}
+                        aria-label="Shuffle"
+                        title="Shuffle"
+                    >
+                        <img src={shuffleIcon} alt="" aria-hidden="true" />
+                    </button>
+                </div>
+                <div className="action_stack_right">
+                    <button
+                        type="button"
+                        className="side_action_button"
+                        onClick={handleNext}
+                        disabled={!canGoNext}
+                        aria-label="Next lesson"
+                        title="Next lesson"
+                    >
+                        <img src={arrowRightIcon} alt="" aria-hidden="true" />
+                    </button>
+                    <button
+                        type="button"
+                        className="reverse_button_right"
+                        onClick={handleReverse}
+                        aria-label="Reverse"
+                        title="Reverse"
+                    >
+                        <img src={reverseIcon} alt="" aria-hidden="true" />
+                    </button>
                 </div>
         </div>
     )

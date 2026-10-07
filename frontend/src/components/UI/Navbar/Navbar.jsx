@@ -5,13 +5,11 @@ import "./NavbarAlt.css";
 import filter from "../../../assets/icons/filter.svg";
 import search from "../../../assets/icons/search.svg";
 
-const Navbar = ({ onGameSelect, onSearch }) => {
+const Navbar = ({ onGameSelect, onSearch, selectedGame = "Test" }) => {
 
-    const [selectedGame, setSelectedGame] = useState(null);
     const [searchInput, setSearchInput] = useState("");
 
     const handleGameClick = (gameName) => {
-      setSelectedGame(gameName);
       onGameSelect(gameName);
     };
 
