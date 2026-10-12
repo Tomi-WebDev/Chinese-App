@@ -22,6 +22,7 @@ import Lesson9 from './pages/Lessons/Lesson9.jsx';
 import Lesson10 from './pages/Lessons/Lesson10.jsx';
 import Lesson11 from './pages/Lessons/Lesson11.jsx';
 import Lesson12 from './pages/Lessons/Lesson12.jsx';
+import Lesson13 from './pages/Lessons/Lesson13.jsx';
 import Test1 from './pages/Lessons/Test1.jsx';
 import Sentences1 from './pages/Lessons/Sentences1.jsx';
 import ElonLesson1 from './pages/Lessons/ElonLesson1.jsx';
@@ -119,6 +120,7 @@ function App() {
           <Route path='/lesson-10' element={<Lesson10 />}/>
           <Route path='/lesson-11' element={<Lesson11 />}/>
           <Route path='/lesson-12' element={<Lesson12 />}/>
+          <Route path='/lesson-13' element={<Lesson13 />}/>
           <Route path='/test-1' element={<Test1 />}/>
           <Route path='/sentences-1' element={<Sentences1 />}/>
           <Route path='/elon-lesson-1' element={<ElonLesson1 />}/>

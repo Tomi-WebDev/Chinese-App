@@ -28,6 +28,7 @@ const InputList = (props) => {
         "/lesson-10",
         "/lesson-11",
         "/lesson-12",
+        "/lesson-13",
         "/test-1",
     ];
     const currentLessonIndex = lessonRoutes.indexOf(location.pathname);

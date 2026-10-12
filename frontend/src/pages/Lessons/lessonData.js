@@ -228,6 +228,22 @@ export const lesson12Vocabulary = [
   { english: "ръка", chinese: "手", pinyin: "shǒu" },
 ];
 
+export const lesson13Vocabulary = [
+  { english: "сектретар", chinese: "秘书", pinyin: "mìshū" },
+  { english: "представям", chinese: "介绍", pinyin: "jièshào" },
+  { english: "малко (за действие)", chinese: "一下儿", pinyin: "yíxiàr" },
+  { english: "директор", chinese: "校长", pinyin: "xiàozhǎng" },
+  { english: "учтив класификатор за хора", chinese: "位", pinyin: "wèi" },
+  { english: "професор", chinese: "教授", pinyin: "jiàoshòu" },
+  { english: "приветствам", chinese: "欢迎", pinyin: "huānyíng" },
+  { english: "чуждестранен студент", chinese: "留学生", pinyin: "liúxuéshēng" },
+  { english: "то", chinese: "它", pinyin: "tā" },
+  { english: "всички", chinese: "都", pinyin: "dōu" },
+  { english: "двама", chinese: "俩", pinyin: "liǎ" },
+  { english: "трима", chinese: "仨", pinyin: "sā" },
+  { english: "няма нищо", chinese: "没什么", pinyin: "méi shénme" },
+];
+
 export const test1Vocabulary = [
   ...lesson1Vocabulary,
   ...lesson2Vocabulary,
@@ -241,6 +257,7 @@ export const test1Vocabulary = [
   ...lesson10Vocabulary,
   ...lesson11Vocabulary,
   ...lesson12Vocabulary,
+  ...lesson13Vocabulary,
 ];
 
 export const sentences1Vocabulary = [
