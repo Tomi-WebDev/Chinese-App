@@ -25,6 +25,7 @@ import Lesson12 from './pages/Lessons/Lesson12.jsx';
 import Lesson13 from './pages/Lessons/Lesson13.jsx';
 import Test1 from './pages/Lessons/Test1.jsx';
 import Sentences1 from './pages/Lessons/Sentences1.jsx';
+import Extra1 from './pages/Lessons/Extra1.jsx';
 import ElonLesson1 from './pages/Lessons/ElonLesson1.jsx';
 import HanyuJiaochengLesson1 from './pages/Lessons/HanyuJiaochengLesson1.jsx';
 import HSK1Lesson1 from './pages/Lessons/HSK1Lesson1.jsx';
@@ -123,6 +124,7 @@ function App() {
           <Route path='/lesson-13' element={<Lesson13 />}/>
           <Route path='/test-1' element={<Test1 />}/>
           <Route path='/sentences-1' element={<Sentences1 />}/>
+          <Route path='/extra-1' element={<Extra1 />}/>
           <Route path='/elon-lesson-1' element={<ElonLesson1 />}/>
           <Route path='/hanyu-jiaocheng-lesson-1' element={<HanyuJiaochengLesson1 />}/>
           <Route path='/hsk1-lesson-1' element={<HSK1Lesson1 />}/>

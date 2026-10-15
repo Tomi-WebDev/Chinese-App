@@ -181,7 +181,6 @@ export const lesson10Vocabulary = [
   { english: "мандарина", chinese: "橘子", pinyin: "júzi" },
   { english: "общо", chinese: "一共", pinyin: "yígòng" },
   { english: "давам", chinese: "给", pinyin: "gěi" },
-  { english: "връщам", chinese: "找", pinyin: "zhǎo" },
   { english: "как, защо", chinese: "怎么", pinyin: "zěnme" },
   { english: "частица за предложение", chinese: "吧", pinyin: "ba" },
   { english: "още", chinese: "还", pinyin: "hái" },
@@ -210,7 +209,7 @@ export const lesson11Vocabulary = [
 
 export const lesson12Vocabulary = [
   { english: "офис, канцелария", chinese: "办公室", pinyin: "bàngōngshì" },
-  { english: "търся, тегля (пари)", chinese: "找", pinyin: "zhǎo" },
+  { english: "търся, връщам (ресто)", chinese: "找", pinyin: "zhǎo" },
   { english: "съм в/на", chinese: "在", pinyin: "zài" },
   { english: "дом, семейство", chinese: "家", pinyin: "jiā" },
   { english: "частица за връщане на въпрос", chinese: "呢", pinyin: "ne" },
@@ -242,6 +241,19 @@ export const lesson13Vocabulary = [
   { english: "двама", chinese: "俩", pinyin: "liǎ" },
   { english: "трима", chinese: "仨", pinyin: "sā" },
   { english: "няма нищо", chinese: "没什么", pinyin: "méi shénme" },
+];
+
+export const extraVocab1 = [
+  { english: "пръчици", chinese: "筷子", pinyin: "kuàizi" },
+  { english: "купа, класификатор за храна", chinese: "碗", pinyin: "wǎn" },
+  { english: "книга", chinese: "书", pinyin: "shū" },
+  { english: "речник", chinese: "词典", pinyin: "cídiǎn" },
+  { english: "компютър", chinese: "电脑", pinyin: "diànnǎo" },
+  { english: "чадър", chinese: "伞", pinyin: "sǎn" },
+  { english: "кола", chinese: "汽车", pinyin: "qìchē" },
+  { english: "телевизор", chinese: "电视", pinyin: "diànshì" },
+  { english: "хладилник", chinese: "冰箱", pinyin: "bīngxiāng" },
+  { english: "мобилен телефон", chinese: "手机", pinyin: "shǒujī" },
 ];
 
 export const test1Vocabulary = [
@@ -330,6 +342,22 @@ export const elonLesson1Vocabulary = [
 ];
 
 export const hanyuJiaochengLesson1Vocabulary = [
+  { english: "ти", chinese: "你", pinyin: "nǐ" },
+  { english: "добре", chinese: "好", pinyin: "hǎo" },
+  { english: "здравей", chinese: "你好", pinyin: "nǐ hǎo" },
+  { english: "едно", chinese: "一", pinyin: "yī" },
+  { english: "пет", chinese: "五", pinyin: "wǔ" },
+  { english: "осем", chinese: "八", pinyin: "bā" },
+  { english: "голям", chinese: "大", pinyin: "dà" },
+  { english: "не", chinese: "不", pinyin: "bù" },
+  { english: "уста", chinese: "口", pinyin: "kǒu" },
+  { english: "бял", chinese: "百", pinyin: "bái" },
+  { english: "жена", chinese: "女", pinyin: "nǚ" },
+  { english: "кон", chinese: "马", pinyin: "mǎ" },
+];
+
+export const hanyuJiaochengLesson2Vocabulary = [
+  { english: "", chinese: "", pinyin: "" },
 ];
 
 export const hsk1Lesson1Vocabulary = [

@@ -38,7 +38,8 @@
 
 .navbar-chinese_button:hover,
 .navbar-chinese_button:focus-visible {
-    background: #2a7b92;
+    /*background: #2a7b92;*/
+    background: linear-gradient(135deg, #e86f51, #e59a48);
     transform: translateY(-2px);
 }
 

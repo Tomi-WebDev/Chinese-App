@@ -54,9 +54,10 @@ const lessons = [
   { name: "Урок 10", description: "买，卖，多少，多，少，块，元，毛，角，分，斤，公斤，水果，苹果，便宜，来，一点儿，别的，橘子，一共，给，找，怎么，吧，还", path: "/lesson-10", accent: "violet" },
   { name: "Урок 11", description: "下午，上午，图书馆，换，小姐，营业员，人民币，一百，一千，一万，美元，日元，欧元，韩元，等，一会儿，先生，数", path: "/lesson-11", accent: "gold" },
   { name: "Урок 12", description: "办公室，找，在，家，呢，住，号，楼，零，房间，知道，电话，电，话，号码，手机，手", path: "/lesson-12", accent: "coral" },
-  { name: "Урок 13", description: "星期，星期一，星期二，星期三，星期四，星期五，星期六，星期日，今天，明天，昨天，前天，下星期，这个星期，天", path: "/lesson-13", accent: "gold" },
+  { name: "Урок 13", description: "秘书，介绍，一下儿，校长，位，教授，欢迎，留学生，它，都，俩，仨，没什么", path: "/lesson-13", accent: "gold" },
   { name: "Тест 1", description: "Уроци 1 до 13", path: "/test-1", accent: "green" },
   { name: "Изречения 1", description: "Изреченията (недовършен)", path: "/sentences-1", accent: "blue" },
+  { name: "Екстра 1", description: "Допълнителни думи и изрази", path: "/extra-1", accent: "violet" },
 ];
 
 const elonLessons = [
