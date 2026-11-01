@@ -15,9 +15,9 @@ import Dialoog from "../../components/Dialoog/Dialoog";
 import ReadingSentences from "../../components/ReadingSentences/ReadingSentences";
 
 const HSK1Vocabulary = [
-  ["爱", "to love; to like; affection", "ài"], ["八", "eight", "bā"], ["爸爸", "father; dad", "bàba"], ["吧", "suggestion particle", "ba"], ["白天", "daytime; during the day; day", "báitiān"],
-  ["百", "hundred", "bǎi"], ["半", "half", "bàn"], ["包子", "bao", "bāozi"], ["杯子", "cup; glass", "bēizi"], ["本", "measure word for books", "běn"],
-  ["边", "side; edge; margin", "biān"], ["病", "illness; disease; to fall ill", "bìng"], ["不", "no; not so; not", "bù"], ["不客气", "you're welcome", "búkèqi"], ["不要", "don't; must not", "búyào"],
+  ["爱", "любов, обичам", "ài"], ["八", "осем", "bā"], ["爸爸", "татко, баща", "bàba"], ["吧", "модална частица за предложение", "ba"], ["白天", "през деня", "báitiān"],
+  ["百", "сто", "bǎi"], ["半", "половина", "bàn"], ["包子", "баодзъ", "bāozi"], ["杯子", "чаша", "bēizi"], ["本", "кл. за книги", "běn"],
+  ["边", "страна", "biān"], ["病", "болест, разболявам се", "bìng"], ["不", "не", "bù"], ["不客气", "you're welcome", "búkèqi"], ["不要", "don't; must not", "búyào"],
   ["菜", "dish; vegetable; cuisine", "cài"], ["茶", "tea; tea plant", "chá"], ["唱", "to sing; to call loudly; to chant", "chàng"], ["超市", "supermarket", "chāoshì"], ["车", "car; vehicle", "chē"],
   ["吃", "to eat; to consume; to eat at", "chī"], ["出租车", "taxi; rental car", "chūzūchē"], ["穿", "to wear; to put on; to dress", "chuān"], ["打电话", "to make a phone call", "dǎdiànhuà"], ["大", "big; large; great", "dà"],
   ["大家", "everyone", "dàjiā"], ["大学", "college; university", "dàxué"], ["大学生", "university student; college student", "dàxuéshēng"], ["到", "to reach; to arrive; to leave for", "dào"], ["的", "linking particle", "de"],

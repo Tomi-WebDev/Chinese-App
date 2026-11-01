@@ -56,6 +56,7 @@ const lessons = [
   { name: "Урок 12", description: "办公室，找，在，家，呢，住，号，楼，零，房间，知道，电话，电，话，号码，手机，手", path: "/lesson-12", accent: "coral" },
   { name: "Урок 13", description: "秘书，介绍，一下儿，校长，位，教授，欢迎，留学生，它，都，俩，仨，没什么", path: "/lesson-13", accent: "gold" },
   { name: "Урок 14", description: "语言，大学，怎么样，觉得，语法...", path: "/lesson-14", accent: "violet" },
+  { name: "1-ви Урок (Нов Учебник)", description: "现在，跟，一起，咱们，走，常（常）。。。", path: "/latest-lesson", accent: "orange" },
   { name: "Тест 1", description: "Уроци 1 до 14", path: "/test-1", accent: "green" },
   { name: "Изречения 1", description: "Изреченията (недовършен)", path: "/sentences-1", accent: "blue" },
   { name: "Екстра 1", description: "Предмети, Плодове, Части на тялото", path: "/extra-1", accent: "violet" },
