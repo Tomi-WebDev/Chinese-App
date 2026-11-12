@@ -13,6 +13,7 @@ import Sudoku1 from "../../components/Sudoku/Sudoku1";
 import PickHanzi from "../../components/PickHanzi/PickHanzi";
 import Dialoog from "../../components/Dialoog/Dialoog";
 import ReadingSentences from "../../components/ReadingSentences/ReadingSentences";
+import HandwritingPractice from "../../components/HandwritingPractice/HandwritingPractice";
 
 const HSK1Vocabulary = [
   ["爱", "любов, обичам", "ài"], ["八", "осем", "bā"], ["爸爸", "татко, баща", "bàba"], ["吧", "модална частица за предложение", "ba"], ["白天", "през деня", "báitiān"],
@@ -83,7 +84,7 @@ const First100Words = ({ lessonVocabulary }) => {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const exerciseFromUrl = searchParams.get("exercise");
-  const availableExercises = ["Test", "Flashcards", "Sentences HSK - Listening", "Изречения", "Изречения - Четене HSK1", "Phrases", "Sudoku", "Basket"];
+  const availableExercises = ["Test", "Flashcards", "Handwriting", "Sentences HSK - Listening", "Изречения", "Изречения - Четене HSK1", "Phrases", "Sudoku", "Basket"];
   const isHskExercisePage = location.pathname === "/italian";
   const initialExercise = availableExercises.includes(exerciseFromUrl) ? exerciseFromUrl : "Test";
   const [selectedExercise, setSelectedExercise] = useState(initialExercise);
@@ -903,6 +904,7 @@ const First100Words = ({ lessonVocabulary }) => {
           {selectedExercise === "Phrases" && <AudioPractice2 shuffleArray={shuffleArray} englishSentenceList={englishPhraseList} hanziSentenceList={hanziPhraseList} pinyinSentenceList={pinyinPhraseList} onSearch={handleSearch} selectedIndex={currentIndex}/>}
           {selectedExercise === "Sudoku" && <Sudoku1/>}
           {selectedExercise === "Basket" && <PickHanzi/>}
+          {selectedExercise === "Handwriting" && <HandwritingPractice vocabulary={vocabularyList} />}
           {/* {selectedExercise === "Dialoog" && <Dialoog />} */}
           <FooterChinese
             showPinyin={showPinyin}

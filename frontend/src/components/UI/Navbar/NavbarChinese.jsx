@@ -22,6 +22,13 @@ const NavbarChinese = ({ onGameSelect, isHskExercisePage, selectedGame }) => {
             >
                 Flashcards
             </button>
+            <button
+                className={`navbar-chinese_button ${selectedGame === "Handwriting" ? "is-selected" : ""}`}
+                type="button"
+                onClick={() => handleGameClick("Handwriting")}
+            >
+                Handwriting
+            </button>
             {isHskExercisePage ? (
                 <>
                     <button
