@@ -28,6 +28,8 @@ import Lesson15 from './pages/Lessons/Lesson15.jsx';
 import Lesson16 from './pages/Lessons/Lesson16.jsx';
 import Lesson17 from './pages/Lessons/Lesson17.jsx';
 import Lesson18 from './pages/Lessons/Lesson18.jsx';
+import Lesson19 from './pages/Lessons/Lesson19.jsx';
+import Lesson20 from './pages/Lessons/Lesson20.jsx';
 import LatestLesson from './pages/Lessons/LatestLesson.jsx';
 import Test1 from './pages/Lessons/Test1.jsx';
 import Sentences1 from './pages/Lessons/Sentences1.jsx';
@@ -133,6 +135,8 @@ function App() {
           <Route path='/lesson-16' element={<Lesson16 />}/>
           <Route path='/lesson-17' element={<Lesson17 />}/>
           <Route path='/lesson-18' element={<Lesson18 />}/>
+          <Route path='/lesson-19' element={<Lesson19 />}/>
+          <Route path='/lesson-20' element={<Lesson20 />}/>
           <Route path='/latest-lesson' element={<LatestLesson />}/>
           <Route path='/test-1' element={<Test1 />}/>
           <Route path='/sentences-1' element={<Sentences1 />}/>

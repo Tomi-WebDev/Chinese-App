@@ -460,6 +460,59 @@ export const lesson18Vocabulary = [
   { english: "въпрос; проблем", chinese: "问题", pinyin: "wèntí" },
 ];
 
+export const lesson19Vocabulary = [
+  { english: "посещавам; учтив израз за посрещане на клиент", chinese: "光临", pinyin: "guānglín" },
+  { english: "пухено яке; пухено облекло", chinese: "羽绒服", pinyin: "yǔróngfú" },
+  { english: "едновременно… и…; хем… хем…", chinese: "又……又……", pinyin: "yòu… yòu…" },
+  { english: "красив; хубав на вид", chinese: "好看", pinyin: "hǎokàn" },
+  { english: "малко; мъничко", chinese: "一点儿", pinyin: "yìdiǎnr" },
+  { english: "дълъг", chinese: "长", pinyin: "cháng" },
+  { english: "къс; кратък", chinese: "短", pinyin: "duǎn" },
+  { english: "тъмен (за цвят); дълбок", chinese: "深", pinyin: "shēn" },
+  { english: "светъл (за цвят); плитък", chinese: "浅", pinyin: "qiǎn" },
+  { english: "пробвам; опитвам", chinese: "试", pinyin: "shì" },
+  { english: "мога; позволено е; може", chinese: "可以", pinyin: "kěyǐ" },
+  { english: "разбира се; естествено", chinese: "当然", pinyin: "dāngrán" },
+  { english: "широк (за дреха); дебел; тлъст", chinese: "肥", pinyin: "féi" },
+  { english: "дебел; пълен (за човек)", chinese: "胖", pinyin: "pàng" },
+  { english: "слаб; тесен (за дреха)", chinese: "瘦", pinyin: "shòu" },
+  { english: "подходящ; пасващ", chinese: "合适", pinyin: "héshì" },
+  { english: "вид; сорт; класификатор за видове", chinese: "种", pinyin: "zhǒng" },
+  { english: "правя отстъпка; продавам с намаление", chinese: "打折", pinyin: "dǎ zhé" },
+];
+
+export const lesson20Vocabulary = [
+  { english: "година", chinese: "年", pinyin: "nián" },
+  { english: "тази година", chinese: "今年", pinyin: "jīnnián" },
+  { english: "следващата година", chinese: "明年", pinyin: "míngnián" },
+  { english: "по-следващата година", chinese: "后年", pinyin: "hòunián" },
+  { english: "миналата година", chinese: "去年", pinyin: "qùnián" },
+  { english: "завършвам образованието си; дипломирам се", chinese: "毕业", pinyin: "bìyè" },
+  { english: "колко; до каква степен (във въпроси)", chinese: "多", pinyin: "duō" },
+  { english: "на колко години; колко голям", chinese: "多大", pinyin: "duō dà" },
+  { english: "години (за възраст)", chinese: "岁", pinyin: "suì" },
+  { english: "роден съм в годината на определено зодиакално животно", chinese: "属", pinyin: "shǔ" },
+  { english: "куче", chinese: "狗", pinyin: "gǒu" },
+  { english: "прасе", chinese: "猪", pinyin: "zhū" },
+  { english: "рожден ден", chinese: "生日", pinyin: "shēngrì" },
+  { english: "месец", chinese: "月", pinyin: "yuè" },
+  { english: "дата; число от месеца", chinese: "号", pinyin: "hào" },
+  { english: "точно навреме; тъкмо; съвсем подходящо", chinese: "正好", pinyin: "zhènghǎo" },
+  { english: "възнамерявам; планирам; намерение", chinese: "打算", pinyin: "dǎsuàn" },
+  { english: "празнувам; прекарвам (празник); преминавам", chinese: "过", pinyin: "guò" },
+  { english: "подготвям; приготвям се", chinese: "准备", pinyin: "zhǔnbèi" },
+  { english: "провеждам; организирам (събитие)", chinese: "举行", pinyin: "jǔxíng" },
+  { english: "вечерно празненство; вечерно тържество", chinese: "晚会", pinyin: "wǎnhuì" },
+  { english: "участвам; присъединявам се", chinese: "参加", pinyin: "cānjiā" },
+  { english: "време", chinese: "时间", pinyin: "shíjiān" },
+  { english: "час (при посочване на часа)", chinese: "点（钟）", pinyin: "diǎn (zhōng)" },
+  { english: "точно; именно; тъкмо", chinese: "就", pinyin: "jiù" },
+  { english: "непременно; със сигурност", chinese: "一定", pinyin: "yídìng" },
+  { english: "пожелавам", chinese: "祝", pinyin: "zhù" },
+  { english: "щастлив; радостен", chinese: "快乐", pinyin: "kuàilè" },
+  { english: "Честит рожден ден!", chinese: "祝你生日快乐", pinyin: "zhù nǐ shēngrì kuàilè" },
+];
+
 export const latestLessonVocabulary = [
   { english: "сега", chinese: "现在", pinyin: "xiànzài" },
   { english: "със, следвам", chinese: "跟", pinyin: "gēn" },
@@ -546,7 +599,9 @@ export const test1Vocabulary = [
   ...lesson15Vocabulary,
   ...lesson16Vocabulary,
   ...lesson17Vocabulary,
-  ...lesson18Vocabulary
+  ...lesson18Vocabulary,
+  ...lesson19Vocabulary,
+  ...lesson20Vocabulary
 ];
 
 export const sentences1Vocabulary = [
