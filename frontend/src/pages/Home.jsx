@@ -62,8 +62,9 @@ const lessons = [
   { name: "Урок 18", description: "我去超市买东西", path: "/lesson-18", accent: "coral" },
   { name: "Урок 19", description: "可以试试吗", path: "/lesson-19", accent: "blue" },
   { name: "Урок 20", description: "祝你生日快乐", path: "/lesson-20", accent: "green" },
+  { name: "Урок 21", description: "我们明天七点一刻出发", path: "/lesson-21", accent: "orange" },
   { name: "1-ви Урок (Нов Учебник)", description: "现在，跟，一起，咱们，走，常（常）。。。", path: "/latest-lesson", accent: "orange" },
-  { name: "Тест 1", description: "Уроци 1 до 20", path: "/test-1", accent: "green" },
+  { name: "Тест 1", description: "Уроци 1 до 21", path: "/test-1", accent: "green" },
   { name: "Изречения 1", description: "Изреченията (недовършен)", path: "/sentences-1", accent: "blue" },
   { name: "Екстра 1", description: "Предмети, Плодове, Части на тялото", path: "/extra-1", accent: "violet" },
 ];
